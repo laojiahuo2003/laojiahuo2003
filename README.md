@@ -10,7 +10,7 @@
 </h3>
 
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Itim&size=25&pause=1000&center=假&vCenter=真&repeat=真&width=435&lines=A+front-end+developer+in+Hangzhou)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Itim&size=25&pause=1000&center=假&vCenter=真&repeat=真&width=435&lines=A+back-end+developer+in+Hangzhou)](https://git.io/typing-svg)
 <!-- ======================================= -->
 <!-- https://readme-typing-svg.demolab.com/demo/ -->
 
@@ -26,7 +26,7 @@
 <b>Hobbys:</b> music🎵,code⛏
 </li>
 <li>
-<b>Motto:</b> 有志者，事竟成；苦心人，天不负，三千越甲可吞吴。
+<b>Motto:</b> 我是中国奶龙
 </li>
 </div>
 
