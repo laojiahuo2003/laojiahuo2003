@@ -25,9 +25,6 @@
 <li>
 <b>Hobbys:</b> music🎵,code⛏
 </li>
-<li>
-<b>Motto:</b> 我是中国奶龙
-</li>
 </div>
 
 <div>
