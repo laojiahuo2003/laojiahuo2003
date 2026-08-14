@@ -9,8 +9,8 @@
 <circle cx="72" cy="17" r="6.5" fill="#28C840"/>
 <text x="340" y="22" text-anchor="middle" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="12" fill="#7DBB7D">老家伙 @ laojiahuo2003: ~</text>
 <text x="20" y="60" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#4CAF50">~/laojiahuo2003 $ whoami</text>
-<text x="20" y="86" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#A5D6A7">▸ 老家伙 · 杭州 · 后端工程师 &amp; AI 应用开发</text>
-<text x="20" y="112" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#A5D6A7">▸ 音乐 · 代码 · UTC+08:00</text>
+<text x="20" y="86" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#A5D6A7">▸ 老家伙 · 杭州</text>
+<text x="20" y="112" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#A5D6A7">▸ AI Infra · LLM · 具身智能</text>
 <text x="20" y="138" font-family="Menlo, Consolas, 'Sarasa Mono SC', monospace" font-size="13" fill="#4CAF50">~/laojiahuo2003 $</text>
 <rect class="cur" x="160" y="128" width="9" height="10" fill="#4CAF50"/>
 </svg>

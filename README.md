@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2800&pause=1200&color=4CAF50&center=true&vCenter=true&width=620&height=80&lines=%E5%90%8E%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%20%C2%B7%20AI%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91;%E6%AD%A3%E5%9C%A8%E5%86%99%E4%BB%A3%E7%A0%81%E2%80%A6%20%E2%9B%8F;%E6%AD%A3%E5%9C%A8%E5%90%AC%E6%AD%8C%E2%80%A6%20%F0%9F%8E%B5;%E6%AD%A3%E5%9C%A8%E7%A0%94%E7%A9%B6%E4%B8%AD%E2%80%A6%20%F0%9F%94%AC;RISC-V%20%C2%B7%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20%C2%B7%20%E5%A4%A7%E6%A8%A1%E5%9E%8B" alt="老家伙 - 打字机" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2800&pause=1200&color=4CAF50&center=true&vCenter=true&width=620&height=80&lines=AI%20Infra%20%C2%B7%20LLM%20%C2%B7%20%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD;%E6%AD%A3%E5%9C%A8%E5%86%99%E4%BB%A3%E7%A0%81%E2%80%A6%20%E2%9B%8F;%E6%AD%A3%E5%9C%A8%E5%90%AC%E6%AD%8C%E2%80%A6%20%F0%9F%8E%B5;%E6%AD%A3%E5%9C%A8%E7%A0%94%E7%A9%B6%E4%B8%AD%E2%80%A6%20%F0%9F%94%AC;%E8%AE%AD%E7%BB%83%20%C2%B7%20%E6%8E%A8%E7%90%86%20%C2%B7%20%E9%83%A8%E7%BD%B2%20%C2%B7%20Agent" alt="老家伙 - 打字机" />
 </p>
 
 <p align="center">

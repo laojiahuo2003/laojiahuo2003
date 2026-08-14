@@ -65,8 +65,8 @@ def build(lines, title, out_name):
 build(
     lines=[
         ("prompt", "~/laojiahuo2003 $ whoami"),
-        ("out",    "▸ 老家伙 · 杭州 · 后端工程师 & AI 应用开发"),
-        ("out",    "▸ 音乐 · 代码 · UTC+08:00"),
+        ("out",    "▸ 老家伙 · 杭州"),
+        ("out",    "▸ AI Infra · LLM · 具身智能"),
     ],
     title="老家伙 @ laojiahuo2003: ~",
     out_name="whoami.svg",
