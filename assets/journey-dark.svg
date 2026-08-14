@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="744" height="186" viewBox="0 0 744 186" role="img" aria-label="足迹条">
+<style>
+@keyframes breathe{0%,100%{opacity:.4}50%{opacity:.9}}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes grow{from{width:0}}
+@keyframes ringdraw{from{stroke-dashoffset:138}}
+@keyframes flick{0%,100%{transform:scale(1)}30%{transform:scale(1.15)}60%{transform:scale(.95)}}
+@keyframes scan{0%{opacity:.06}100%{opacity:.06}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.pulse{animation:pulse 2s ease infinite}
+.flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}
+</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0C150C"/><stop offset="1" stop-color="#050A05"/></linearGradient></defs>
+<rect width="744" height="186" rx="14" fill="url(#bg)" stroke="#1E2B1E"/>
+<circle cx="62" cy="62" r="22" fill="none" stroke="#12210F" stroke-width="5"/>
+<circle cx="62" cy="62" r="22" fill="none" stroke="#3FB950" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="53" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
+<text x="62" y="66" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D" text-anchor="middle">7th</text>
+<text x="100" y="58" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="28" fill="#E6EDF3" font-weight="700">2020</text>
+<text x="100" y="78" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D">GITHUBING SINCE · 第 7 年</text>
+<line x1="290" y1="20" x2="290" y2="166" stroke="#1E3A1E" stroke-dasharray="2 4"/>
+<text x="312" y="34" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">◉ 最近活动 · LIVE</text>
+<circle cx="318" cy="48" r="3" fill="#3FB950" class="pulse"/>
+<text x="312" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">7h</text>
+<circle cx="352" cy="73" r="3" fill="#3FB950" class="pulse"/>
+<text x="364" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">PushEvent</text>
+<text x="418" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">CXRAgent</text>
+<text x="312" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">10h</text>
+<circle cx="352" cy="95" r="3" fill="#2A4A2A"/>
+<text x="364" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">WatchEvent</text>
+<text x="418" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">anthropics/skills</text>
+<text x="312" y="120" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">1d</text>
+<circle cx="352" cy="117" r="3" fill="#2A4A2A"/>
+<text x="364" y="120" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">PushEvent</text>
+<text x="418" y="120" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">github-daily-report</text>
+<line x1="574" y1="20" x2="574" y2="166" stroke="#1E3A1E" stroke-dasharray="2 4"/>
+<text x="598" y="34" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">STREAK</text>
+<text x="598" y="72" font-size="24" class="flick">🔥</text>
+<text x="634" y="70" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="22" fill="#A5D6A7" font-weight="700">12 天</text>
+<text x="598" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">连续贡献 · 最长 47 天</text>
+</svg>

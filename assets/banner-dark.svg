@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Embodied Intelligence">
+<style>
+  @keyframes breathe { 0%,100% { opacity:.32 } 50% { opacity:.65 } }
+  .glow   { animation: breathe 7s ease-in-out infinite }
+  .line   { stroke-dasharray: 6 10; animation: flow 14s linear infinite }
+
+  @keyframes flow { to { stroke-dashoffset: -320 } }
+</style>
+<defs>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3FB950" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#3FB950" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#3FB950" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="orb" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#3FB950" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#3FB950" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<rect width="920" height="300" rx="18" fill="#0B0E13" stroke="#1C2430"/>
+<g><circle cx="26" cy="21" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="22" cy="70" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="26" cy="122" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="21" cy="165" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="22" cy="217" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="26" cy="266" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="72" cy="25" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="75" cy="75" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="71" cy="119" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="75" cy="167" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="72" cy="213" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="73" cy="263" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="121" cy="21" r="1.5" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="121" cy="71" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="122" cy="117" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="123" cy="167" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="123" cy="213" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="120" cy="266" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="167" cy="23" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="170" cy="74" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="169" cy="122" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="168" cy="168" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="170" cy="215" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="171" cy="261" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="215" cy="21" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="214" cy="74" r="1.5" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="218" cy="120" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="214" cy="166" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="217" cy="216" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="214" cy="265" r="1.5" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="267" cy="21" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="266" cy="70" r="1.5" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="264" cy="120" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="265" cy="171" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="266" cy="217" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="261" cy="263" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="312" cy="21" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="313" cy="69" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="310" cy="119" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="313" cy="167" r="1.5" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="309" cy="215" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="309" cy="262" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="362" cy="24" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="358" cy="74" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="359" cy="121" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="361" cy="171" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="360" cy="218" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="361" cy="264" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="406" cy="21" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="409" cy="73" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="405" cy="117" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="405" cy="165" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="409" cy="214" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="406" cy="265" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="454" cy="27" r="1.5" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="454" cy="69" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="455" cy="120" r="1.5" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="459" cy="170" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="453" cy="216" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="454" cy="262" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="502" cy="24" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="504" cy="70" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="507" cy="123" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="506" cy="169" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="507" cy="219" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="504" cy="264" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="555" cy="24" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="552" cy="69" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="555" cy="123" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="552" cy="170" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="550" cy="215" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="553" cy="266" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="597" cy="21" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="597" cy="73" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="597" cy="121" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="600" cy="165" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="601" cy="213" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="599" cy="262" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="647" cy="24" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="648" cy="71" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="648" cy="121" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="649" cy="166" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="647" cy="213" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="647" cy="262" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="697" cy="27" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="698" cy="69" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="693" cy="117" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="695" cy="169" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="694" cy="218" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="695" cy="267" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="746" cy="24" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="741" cy="71" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="742" cy="122" r="1.5" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="745" cy="165" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="746" cy="214" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="745" cy="265" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="790" cy="21" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="795" cy="75" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="790" cy="122" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="791" cy="171" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="790" cy="219" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="792" cy="261" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="843" cy="24" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="838" cy="75" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="843" cy="117" r="1.5" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="838" cy="171" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="839" cy="219" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="837" cy="266" r="1" fill="#E6EDF3" opacity="0.14"/>
+  <circle cx="887" cy="23" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="887" cy="74" r="1.5" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="885" cy="117" r="1" fill="#E6EDF3" opacity="0.08"/>
+  <circle cx="889" cy="167" r="1" fill="#E6EDF3" opacity="0.05"/>
+  <circle cx="889" cy="216" r="1" fill="#E6EDF3" opacity="0.1"/>
+  <circle cx="888" cy="265" r="1" fill="#E6EDF3" opacity="0.14"/></g>
+
+<!-- 呼吸光晕（右上方） -->
+<circle class="glow" cx="730" cy="74" r="150" fill="url(#orb)"/>
+
+<!-- 流动光线（左侧竖向强调线） -->
+<rect x="56" y="86" width="3" height="76" rx="1.5" fill="#3FB950"/>
+
+<!-- 名字 -->
+<text x="80" y="118" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
+      font-size="44" font-weight="700" letter-spacing=".5" fill="#E6EDF3">Jiahuo Lao</text>
+<text x="80" y="148" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
+      font-size="15" font-weight="500" fill="#8B949E">老家伙 · 杭州 · UTC+08:00</text>
+
+<!-- 方向标签 -->
+<text x="80" y="196" font-family="Menlo, Consolas, monospace"
+      font-size="17" font-weight="500" letter-spacing="1" fill="#3FB950">AI Infra · LLM · 具身智能</text>
+
+<!-- 底部流动细线 -->
+<path class="line" d="M 56 246 H 864" stroke="url(#edge)" stroke-width="1.5" fill="none"/>
+<text x="864" y="236" text-anchor="end" font-family="Menlo, Consolas, monospace"
+      font-size="11" fill="#8B949E" letter-spacing="2">TRAIN · SERVE · EMBODY</text>
+</svg>

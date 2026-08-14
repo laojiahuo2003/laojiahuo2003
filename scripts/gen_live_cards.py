@@ -24,9 +24,25 @@ ASSETS = os.path.join(HERE, "..", "assets")
 REPORT_REPO = "https://github.com/laojiahuo2003/github-daily-report.git"
 
 MONO = "Menlo, Consolas, 'Courier New', monospace"
-BG1, BG2 = "#FAFDFA", "#F0F8F0"
-BORDER = "#D5E8D5"
-GREEN, LIGHT, DIM, DIMMER = "#1A7F37", "#1F2328", "#4C7C54", "#7C9080"
+# 颜色常量由 PALETTES 在 main() 中按主题注入
+INK = TRACK = DIV = PILL = DDOT = DASH = ""
+BG1 = BG2 = BORDER = ""
+GREEN = LIGHT = DIM = DIMMER = ""
+
+PALETTES = {
+    "": {   # 浅色（默认）
+        "BG1": "#FAFDFA", "BG2": "#F0F8F0", "BORDER": "#D5E8D5",
+        "GREEN": "#1A7F37", "LIGHT": "#1F2328", "DIM": "#4C7C54", "DIMMER": "#7C9080",
+        "INK": "#1F2328", "TRACK": "#E0EDE0", "DIV": "#CBE2CB", "PILL": "#BFDDBF",
+        "DDOT": "#A8C8A8", "DASH": "#D5E8D5",
+    },
+    "-dark": {   # 深色（GitHub 夜间模式）
+        "BG1": "#0C150C", "BG2": "#050A05", "BORDER": "#1E2B1E",
+        "GREEN": "#3FB950", "LIGHT": "#A5D6A7", "DIM": "#7DBB7D", "DIMMER": "#5A7A5A",
+        "INK": "#E6EDF3", "TRACK": "#12210F", "DIV": "#1E3A1E", "PILL": "#234923",
+        "DDOT": "#2A4A2A", "DASH": "#1A2A1A",
+    },
+}
 
 OFFLINE = os.environ.get("LIVE_OFFLINE") == "1"
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
@@ -84,7 +100,7 @@ def fetch_events():
             {"type": "WatchEvent", "repo": "anthropics/skills", "created_at": "2026-08-14T04:00:00Z"},
             {"type": "PushEvent", "repo": "laojiahuo2003/github-daily-report", "created_at": "2026-08-13T09:00:00Z", "n": 1},
         ]
-    evs = api(f"https://api.github.com/users/{USER}/events/public?per_page=30")
+    evs = api(f"https://api.github.com/users/{USER}/events/public?per_page=100")
     out, seen = [], set()
     for e in evs:
         if e["repo"]["name"] == f"{USER}/{USER}":
@@ -93,14 +109,30 @@ def fetch_events():
         if key in seen:
             continue
         seen.add(key)
-        if e["type"] == "PushEvent":
-            n = len(e.get("payload", {}).get("commits", []))
-            out.append({"type": "push", "repo": e["repo"]["name"], "created_at": e["created_at"], "n": n})
-        elif e["type"] == "WatchEvent":
-            out.append({"type": "star", "repo": e["repo"]["name"], "created_at": e["created_at"]})
-        elif e["type"] == "CreateEvent":
-            out.append({"type": "create", "repo": e["repo"]["name"], "created_at": e["created_at"]})
-        if len(out) >= 3:
+        t, p = e["type"], e.get("payload", {})
+        repo, at = e["repo"]["name"], e["created_at"]
+        if t == "PushEvent":
+            out.append({"type": "push", "repo": repo, "created_at": at,
+                        "detail": f"{len(p.get('commits', []))} commits"})
+        elif t == "PullRequestEvent":
+            title = p.get("pull_request", {}).get("title", "")
+            out.append({"type": "PR", "repo": repo, "created_at": at,
+                        "detail": title or p.get("action", "")})
+        elif t == "IssuesEvent":
+            title = p.get("issue", {}).get("title", "")
+            out.append({"type": "issue", "repo": repo, "created_at": at,
+                        "detail": title or p.get("action", "")})
+        elif t == "WatchEvent":
+            out.append({"type": "star", "repo": repo, "created_at": at, "detail": ""})
+        elif t == "ForkEvent":
+            out.append({"type": "fork", "repo": repo, "created_at": at, "detail": ""})
+        elif t == "ReleaseEvent":
+            name = p.get("release", {}).get("name") or p.get("release", {}).get("tag_name", "")
+            out.append({"type": "release", "repo": repo, "created_at": at, "detail": name})
+        elif t == "CreateEvent":
+            out.append({"type": "create", "repo": repo, "created_at": at,
+                        "detail": p.get("ref_type", "")})
+        if len(out) >= 5:
             break
     return out
 
@@ -210,7 +242,8 @@ def svg_open(w, h, label):
     )
 
 
-def txt(x, y, s, size=12, fill=LIGHT, mono=True, weight=None, extra=""):
+def txt(x, y, s, size=12, fill=None, mono=True, weight=None, extra=""):
+    fill = LIGHT if fill is None else fill
     fam = MONO if mono else "-apple-system,'Segoe UI','PingFang SC',sans-serif"
     wattr = f' font-weight="{weight}"' if weight else ""
     return (f'<text x="{x}" y="{y}" font-family="{fam}" font-size="{size}" '
@@ -218,41 +251,46 @@ def txt(x, y, s, size=12, fill=LIGHT, mono=True, weight=None, extra=""):
 
 
 def build_journey(user, events, contrib):
-    W, H = 744, 124
+    W, H = 744, 186
     s = svg_open(W, H, "足迹条")
     # 年份环
     year = user["created_at"][:4]
     nth = datetime.now(timezone.utc).year - int(year) + 1
     frac = (datetime.now(timezone.utc).timetuple().tm_yday) / 366
     C = 138
-    s += f'<circle cx="62" cy="62" r="22" fill="none" stroke="#E0EDE0" stroke-width="5"/>\n'
+    s += f'<circle cx="62" cy="62" r="22" fill="none" stroke="{TRACK}" stroke-width="5"/>\n'
     s += (f'<circle cx="62" cy="62" r="22" fill="none" stroke="{GREEN}" stroke-width="5" '
           f'stroke-linecap="round" stroke-dasharray="{C}" stroke-dashoffset="{C*(1-frac):.0f}" '
           f'style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>\n')
     s += txt(62, 66, f"{nth}th", 10, DIM, extra=' text-anchor="middle"')
-    s += txt(100, 58, year, 28, "#1F2328", weight="700")
+    s += txt(100, 58, year, 28, INK, weight="700")
     s += txt(100, 78, f"GITHUBING SINCE · 第 {nth} 年", 9, DIM)
     # 分隔线
-    s += f'<line x1="290" y1="20" x2="290" y2="{H-20}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="290" y1="20" x2="290" y2="{H-20}" stroke="{DIV}" stroke-dasharray="2 4"/>\n'
     # 最近活动
     s += txt(312, 34, "◉ 最近活动 · LIVE", 10, DIM)
     s += f'<circle cx="318" cy="48" r="3" fill="{GREEN}" class="pulse"/>\n'
-    y = 52
-    for i, e in enumerate(events[:3]):
+    y = 54
+    for i, e in enumerate(events[:5]):
         t = e.get("_rel") or rel_time(e["created_at"])
         ty = e["type"]
         name = e["repo"].split("/", 1)[-1] if e["repo"].startswith(f"{USER}/") else e["repo"]
-        detail = f"{name} · {e['n']} commits" if ty == "push" and e.get("n") else name
-        y += 20
+        det = e.get("detail") or ""
+        if det:
+            det = " · " + det
+        detail = f"{name}{det}"
+        if len(detail) > 24:
+            detail = detail[:23] + "…"
+        y += 22
         s += txt(312, y, t, 10, DIMMER)
         if i == 0:
             s += f'<circle cx="352" cy="{y-3}" r="3" fill="{GREEN}" class="pulse"/>\n'
         else:
-            s += f'<circle cx="352" cy="{y-3}" r="3" fill="#A8C8A8"/>\n'
+            s += f'<circle cx="352" cy="{y-3}" r="3" fill="{DDOT}"/>\n'
         s += txt(364, y, ty, 10, DIM)
-        s += txt(412, y, detail, 11, LIGHT)
+        s += txt(418, y, detail, 11, LIGHT)
     # streak
-    s += f'<line x1="574" y1="20" x2="574" y2="{H-20}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="574" y1="20" x2="574" y2="{H-20}" stroke="{DIV}" stroke-dasharray="2 4"/>\n'
     s += txt(598, 34, "STREAK", 10, DIM)
     st = contrib["streak"]
     if st is not None:
@@ -287,17 +325,17 @@ def build_picks(rep):
         s += f'<g style="animation:fadein .6s ease {.1 + i*.15}s backwards">\n'
         s += txt(28, y, f"{i+1:02d}", 11, GREEN)
         disp = name if len(name) <= 34 else name[:33] + "…"
-        s += txt(56, y, disp, 13, "#1F2328")
+        s += txt(56, y, disp, 13, INK)
         s += txt(416, y, f"▲ {fmt_k(stars)}", 11, GREEN)
         lw = max(44, len(lang) * 6 + 16)
-        s += f'<rect x="{W - 28 - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="#BFDDBF"/>\n'
+        s += f'<rect x="{W - 28 - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="{PILL}"/>\n'
         s += txt(W - 28 - lw / 2, y, lang, 9, DIM, extra=' text-anchor="middle"')
         s += '</g>\n'
         if i < len(rep["top"]) - 1:
-            s += f'<line x1="28" y1="{y + 12}" x2="440" y2="{y + 12}" stroke="#D5E8D5" stroke-dasharray="3 3"/>\n'
+            s += f'<line x1="28" y1="{y + 12}" x2="440" y2="{y + 12}" stroke="{DASH}" stroke-dasharray="3 3"/>\n'
     # 右列
     XR = 486
-    s += f'<line x1="458" y1="24" x2="458" y2="{H-24}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="458" y1="24" x2="458" y2="{H-24}" stroke="{DIV}" stroke-dasharray="2 4"/>\n'
     s += txt(XR, 66, "今日扫描", 10, DIM)
     for i, (num, lab) in enumerate([(rep["new"], "新发现"), (rep["fast"], "增长追踪")]):
         x = XR + i * 100
@@ -309,12 +347,13 @@ def build_picks(rep):
     for i, (lang, cnt) in enumerate(langs):
         y = 150 + i * 20
         pct = cnt / total * 100
-        s += txt(XR, y + 4, lang[:8], 10, LIGHT)
-        s += f'<rect x="{XR + 56}" y="{y - 3}" width="140" height="5" rx="2.5" fill="#E0EDE0"/>\n'
-        s += (f'<rect x="{XR + 56}" y="{y - 3}" width="{140 * pct / 100:.0f}" height="5" rx="2.5" '
+        lbl = lang if len(lang) <= 10 else lang[:9] + "…"
+        s += txt(XR, y + 4, lbl, 10, LIGHT)
+        s += f'<rect x="{XR + 72}" y="{y - 3}" width="118" height="5" rx="2.5" fill="{TRACK}"/>\n'
+        s += (f'<rect x="{XR + 72}" y="{y - 3}" width="{118 * pct / 100:.0f}" height="5" rx="2.5" '
               f'fill="{GREEN}" style="animation:grow 1.2s ease {.2 + i*.15}s backwards"/>\n')
-        s += txt(XR + 204, y + 4, f"{pct:.0f}%", 9, DIMMER)
-    s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="#BFDDBF"/>\n'
+        s += txt(XR + 198, y + 4, f"{pct:.0f}%", 9, DIMMER)
+    s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="{PILL}"/>\n'
     s += txt(XR + 108, 235, "📄 查看完整日报 →", 11, GREEN, extra=' text-anchor="middle"')
     s += txt(W - 28, H - 16, "POWERED BY github-daily-report", 9, DIMMER, extra=' text-anchor="end"')
     s += "</svg>\n"
@@ -337,7 +376,7 @@ def build_stats(user, contrib, stars):
     for i, (k, v, frac) in enumerate(rows):
         y += 26
         s += txt(28, y, k, 12, GREEN)
-        s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="#E0EDE0"/>\n'
+        s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="{TRACK}"/>\n'
         s += (f'<rect x="150" y="{y-10}" width="{440*frac:.0f}" height="8" rx="4" fill="{GREEN}" '
               f'style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) {i*0.15}s backwards"/>\n')
         s += txt(600, y, v, 12, DIM, extra=' text-anchor="end"')
@@ -357,15 +396,18 @@ def main():
     if not rep:
         rep = {"date": "—", "top": [], "new": 0, "fast": 0, "langs": {}}
 
-    outs = {
-        "journey.svg": build_journey(user, events, contrib),
-        "stats.svg": build_stats(user, contrib, fetch_stars()),
-        "picks.svg": build_picks(rep),
-    }
-    for name, svg in outs.items():
-        with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
-            f.write(svg)
-        print(f"生成 {name}")
+    stars = fetch_stars()
+    for suffix, pal in PALETTES.items():
+        globals().update(pal)
+        outs = {
+            f"journey{suffix}.svg": build_journey(user, events, contrib),
+            f"stats{suffix}.svg": build_stats(user, contrib, stars),
+            f"picks{suffix}.svg": build_picks(rep),
+        }
+        for name, svg in outs.items():
+            with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
+                f.write(svg)
+            print(f"生成 {name}")
 
 
 if __name__ == "__main__":

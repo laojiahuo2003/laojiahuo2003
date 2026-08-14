@@ -3,7 +3,7 @@
   @keyframes breathe { 0%,100% { opacity:.32 } 50% { opacity:.65 } }
   .glow   { animation: breathe 7s ease-in-out infinite }
   .line   { stroke-dasharray: 6 10; animation: flow 14s linear infinite }
-  
+
   @keyframes flow { to { stroke-dashoffset: -320 } }
 </style>
 <defs>
@@ -19,7 +19,7 @@
 </defs>
 
 <rect width="920" height="300" rx="18" fill="#FBFDFB" stroke="#D8E8D8"/>
-<g class="dots"><circle cx="26" cy="21" r="1" fill="#1F2328" opacity="0.28"/>
+<g><circle cx="26" cy="21" r="1" fill="#1F2328" opacity="0.28"/>
   <circle cx="22" cy="70" r="1" fill="#1F2328" opacity="0.14"/>
   <circle cx="26" cy="122" r="1" fill="#1F2328" opacity="0.36"/>
   <circle cx="21" cy="165" r="1" fill="#1F2328" opacity="0.2"/>
