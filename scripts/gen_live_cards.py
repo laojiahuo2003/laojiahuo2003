@@ -65,6 +65,18 @@ def fetch_user():
     return api(f"https://api.github.com/users/{USER}")
 
 
+def fetch_stars():
+    """全部公开仓库的 star 总数"""
+    if OFFLINE:
+        return 36
+    try:
+        repos = api(f"https://api.github.com/users/{USER}/repos?per_page=100")
+        return sum(r.get("stargazers_count", 0) for r in repos)
+    except Exception as e:
+        print("stars 获取失败:", e, file=sys.stderr)
+        return None
+
+
 def fetch_events():
     if OFFLINE:
         return [
@@ -75,6 +87,8 @@ def fetch_events():
     evs = api(f"https://api.github.com/users/{USER}/events/public?per_page=30")
     out, seen = [], set()
     for e in evs:
+        if e["repo"]["name"] == f"{USER}/{USER}":
+            continue  # 过滤主页刷新机器人的提交
         key = (e["type"], e["repo"]["name"])
         if key in seen:
             continue
@@ -98,15 +112,15 @@ def fetch_contributions():
     if not TOKEN:
         return {"year_total": None, "streak": None, "longest": None}
     q = """query {
-      viewer {
+      user(login: "%s") {
         contributionsCollection {
           contributionCalendar { totalContributions
             weeks { contributionDays { contributionCount } } }
         }
       }
-    }"""
+    }""" % USER
     try:
-        data = graphql(q)["data"]["viewer"]["contributionsCollection"]
+        data = graphql(q)["data"]["user"]["contributionsCollection"]
         days = [d["contributionCount"] for w in data["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
         year_total = data["contributionCalendar"]["totalContributions"]
         streak = 0
@@ -140,7 +154,11 @@ def fetch_report():
         return None
     content = open(os.path.join(rdir, files[-1]), encoding="utf-8").read()
     m = re.match(r"# GitHub 每日报告 - (\S+)", content)
-    date_str = m.group(1) if m else files[-1][:10]
+    hm = re.match(r"(\d{4}-\d{2}-\d{2})_(\d{2})-(\d{2})", files[-1])
+    if hm:
+        date_str = f"{hm.group(1)} {hm.group(2)}:{hm.group(3)}"
+    else:
+        date_str = m.group(1) if m else files[-1][:10]
 
     sec = re.search(r"## ✨ 新发现项目(.*?)(?=\n## |\Z)", content, re.S)
     entries = []
@@ -183,8 +201,8 @@ def svg_open(w, h, label):
         "@keyframes flick{0%,100%{transform:scale(1)}30%{transform:scale(1.15)}60%{transform:scale(.95)}}\n"
         "@keyframes scan{0%{opacity:.06}100%{opacity:.06}}\n"
         "@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}\n"
-        ".pulse{animation:pulse 4s ease infinite}\n"
-        ".flick{animation:flick 3.6s ease-in-out infinite;transform-origin:center}\n"
+        ".pulse{animation:pulse 2s ease infinite}\n"
+        ".flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}\n"
         "</style>\n"
         f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG1}"/><stop offset="1" stop-color="{BG2}"/></linearGradient></defs>\n'
@@ -256,7 +274,7 @@ def build_picks(rep):
     # 头部
     for i, (h, d) in enumerate([(8, 0), (14, -.3), (6, -.6), (12, -.15), (9, -.45)]):
         s += (f'<rect x="{28 + i*6}" y="34" width="3" height="{h}" rx="1" fill="{GREEN}" '
-              f'style="transform-origin:{29.5 + i*6}px 38px;animation:eq 2.4s ease {d}s infinite"/>\n')
+              f'style="transform-origin:{29.5 + i*6}px 38px;animation:eq 1.2s ease {d}s infinite"/>\n')
     s += txt(66, 44, "GitHub 趋势雷达", 14, LIGHT, weight="600")
     s += f'<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="{GREEN}"/>\n'
     s += f'<circle cx="228" cy="38" r="2.5" fill="{GREEN}" class="pulse"/>\n'
@@ -303,19 +321,19 @@ def build_picks(rep):
     return s
 
 
-def build_stats(user, contrib):
-    W, H = 744, 208
+def build_stats(user, contrib, stars):
+    W, H = 744, 236
     s = svg_open(W, H, "统计 neofetch")
     s += txt(28, 44, f"~/{USER} $ neofetch --stats", 13, GREEN)
-    s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.4s steps(1) infinite"/>\n'
+    s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.1s steps(1) infinite"/>\n'
 
     rows = [
-        ("stars", "36", 0.38),
-        ("commits", "500+" if contrib["year_total"] is None else f"{contrib['year_total']}", 0.86),
+        ("stars", "?" if stars is None else str(stars), 0.38),
+        ("commits", f"{contrib['year_total']}" if contrib["year_total"] is not None else "?", 0.86),
         ("repos", str(user.get("public_repos", "?")), 0.22),
         ("followers", str(user.get("followers", "?")), 0.14),
     ]
-    y = 76
+    y = 72
     for i, (k, v, frac) in enumerate(rows):
         y += 26
         s += txt(28, y, k, 12, GREEN)
@@ -323,7 +341,7 @@ def build_stats(user, contrib):
         s += (f'<rect x="150" y="{y-10}" width="{440*frac:.0f}" height="8" rx="4" fill="{GREEN}" '
               f'style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) {i*0.15}s backwards"/>\n')
         s += txt(600, y, v, 12, DIM, extra=' text-anchor="end"')
-    y += 26
+    y += 30
     s += txt(28, y, "languages", 12, GREEN)
     s += txt(150, y, "Python · C · Go · TypeScript", 11, DIM)
     s += "</svg>\n"
@@ -341,7 +359,7 @@ def main():
 
     outs = {
         "journey.svg": build_journey(user, events, contrib),
-        "stats.svg": build_stats(user, contrib),
+        "stats.svg": build_stats(user, contrib, fetch_stars()),
         "picks.svg": build_picks(rep),
     }
     for name, svg in outs.items():

@@ -36,8 +36,9 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 <style>
   @keyframes breathe {{ 0%,100% {{ opacity:.32 }} 50% {{ opacity:.65 }} }}
   .glow   {{ animation: breathe 7s ease-in-out infinite }}
-  .line   {{ stroke-dasharray: 6 10 }}
+  .line   {{ stroke-dasharray: 6 10; animation: flow 14s linear infinite }}
   
+  @keyframes flow {{ to {{ stroke-dashoffset: -320 }} }}
 </style>
 <defs>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
