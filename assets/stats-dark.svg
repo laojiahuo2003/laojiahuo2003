@@ -23,7 +23,7 @@
 <text x="28" y="124" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#3FB950">commits</text>
 <rect x="150" y="114" width="440" height="8" rx="4" fill="#12210F"/>
 <rect x="150" y="114" width="378" height="8" rx="4" fill="#3FB950" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.15s backwards"/>
-<text x="600" y="124" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#7DBB7D" text-anchor="end">75</text>
+<text x="600" y="124" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#7DBB7D" text-anchor="end">80</text>
 <text x="28" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#3FB950">repos</text>
 <rect x="150" y="140" width="440" height="8" rx="4" fill="#12210F"/>
 <rect x="150" y="140" width="97" height="8" rx="4" fill="#3FB950" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.3s backwards"/>
