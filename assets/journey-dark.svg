@@ -44,7 +44,7 @@
 <text x="418" y="164" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">robonix · branch</text>
 <line x1="574" y1="20" x2="574" y2="166" stroke="#1E3A1E" stroke-dasharray="2 4"/>
 <text x="598" y="34" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">STREAK</text>
-<text x="598" y="66" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="24" fill="#A5D6A7">🚀</text>
-<text x="634" y="64" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#A5D6A7" font-weight="700">keep</text>
-<text x="598" y="90" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">coding every day</text>
+<text x="598" y="72" font-size="24" class="flick">🔥</text>
+<text x="634" y="70" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="22" fill="#A5D6A7" font-weight="700">1 天</text>
+<text x="598" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">连续贡献 · 最长 4 天</text>
 </svg>
