@@ -4,7 +4,7 @@ name: 🎴 生成实时卡片
 on:
   push:
     branches: [main]
-    paths: ['scripts/gen_live_cards.py']
+    paths: ['scripts/gen_live_cards.py', '.github/workflows/live-cards.yml']
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
