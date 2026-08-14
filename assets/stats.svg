@@ -23,11 +23,11 @@
 <text x="28" y="128" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#1A7F37">commits</text>
 <rect x="150" y="118" width="440" height="8" rx="4" fill="#E0EDE0"/>
 <rect x="150" y="118" width="378" height="8" rx="4" fill="#1A7F37" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.15s backwards"/>
-<text x="600" y="128" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#4C7C54" text-anchor="end">523</text>
+<text x="600" y="128" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#4C7C54" text-anchor="end">500+</text>
 <text x="28" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#1A7F37">repos</text>
 <rect x="150" y="144" width="440" height="8" rx="4" fill="#E0EDE0"/>
 <rect x="150" y="144" width="97" height="8" rx="4" fill="#1A7F37" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.3s backwards"/>
-<text x="600" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#4C7C54" text-anchor="end">16</text>
+<text x="600" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#4C7C54" text-anchor="end">17</text>
 <text x="28" y="180" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#1A7F37">followers</text>
 <rect x="150" y="170" width="440" height="8" rx="4" fill="#E0EDE0"/>
 <rect x="150" y="170" width="62" height="8" rx="4" fill="#1A7F37" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.44999999999999996s backwards"/>
