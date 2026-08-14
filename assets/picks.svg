@@ -12,77 +12,77 @@
 .pulse{animation:pulse 2s ease infinite}
 .flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}
 </style>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0C150C"/><stop offset="1" stop-color="#050A05"/></linearGradient></defs>
-<rect width="744" height="316" rx="14" fill="url(#bg)" stroke="#1E2B1E"/>
-<rect x="28" y="34" width="3" height="8" rx="1" fill="#3FB950" style="transform-origin:29.5px 38px;animation:eq 1.2s ease 0s infinite"/>
-<rect x="34" y="34" width="3" height="14" rx="1" fill="#3FB950" style="transform-origin:35.5px 38px;animation:eq 1.2s ease -0.3s infinite"/>
-<rect x="40" y="34" width="3" height="6" rx="1" fill="#3FB950" style="transform-origin:41.5px 38px;animation:eq 1.2s ease -0.6s infinite"/>
-<rect x="46" y="34" width="3" height="12" rx="1" fill="#3FB950" style="transform-origin:47.5px 38px;animation:eq 1.2s ease -0.15s infinite"/>
-<rect x="52" y="34" width="3" height="9" rx="1" fill="#3FB950" style="transform-origin:53.5px 38px;animation:eq 1.2s ease -0.45s infinite"/>
-<text x="66" y="44" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="14" fill="#A5D6A7" font-weight="600">GitHub 趋势雷达</text>
-<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="#3FB950"/>
-<circle cx="228" cy="38" r="2.5" fill="#3FB950" class="pulse"/>
-<text x="235" y="42" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#3FB950">LIVE</text>
-<text x="716" y="42" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D" text-anchor="end">2026-08-14 09:36</text>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFDFA"/><stop offset="1" stop-color="#F0F8F0"/></linearGradient></defs>
+<rect width="744" height="316" rx="14" fill="url(#bg)" stroke="#D5E8D5"/>
+<rect x="28" y="34" width="3" height="8" rx="1" fill="#1A7F37" style="transform-origin:29.5px 38px;animation:eq 1.2s ease 0s infinite"/>
+<rect x="34" y="34" width="3" height="14" rx="1" fill="#1A7F37" style="transform-origin:35.5px 38px;animation:eq 1.2s ease -0.3s infinite"/>
+<rect x="40" y="34" width="3" height="6" rx="1" fill="#1A7F37" style="transform-origin:41.5px 38px;animation:eq 1.2s ease -0.6s infinite"/>
+<rect x="46" y="34" width="3" height="12" rx="1" fill="#1A7F37" style="transform-origin:47.5px 38px;animation:eq 1.2s ease -0.15s infinite"/>
+<rect x="52" y="34" width="3" height="9" rx="1" fill="#1A7F37" style="transform-origin:53.5px 38px;animation:eq 1.2s ease -0.45s infinite"/>
+<text x="66" y="44" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="14" fill="#1F2328" font-weight="600">GitHub 趋势雷达</text>
+<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="#1A7F37"/>
+<circle cx="228" cy="38" r="2.5" fill="#1A7F37" class="pulse"/>
+<text x="235" y="42" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#1A7F37">LIVE</text>
+<text x="716" y="42" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54" text-anchor="end">2026-08-14 09:36</text>
 <g style="animation:fadein .6s ease 0.1s backwards">
-<text x="28" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">01</text>
-<text x="56" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#E6EDF3">cathrynlavery/diagram-design</text>
-<text x="416" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">▲ 16.0k</text>
-<rect x="672" y="101" width="44" height="17" rx="9" fill="none" stroke="#234923"/>
-<text x="694.0" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D" text-anchor="middle">HTML</text>
+<text x="28" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">01</text>
+<text x="56" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">cathrynlavery/diagram-design</text>
+<text x="416" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 16.0k</text>
+<rect x="672" y="101" width="44" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
+<text x="694.0" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">HTML</text>
 </g>
-<line x1="28" y1="126" x2="440" y2="126" stroke="#1A2A1A" stroke-dasharray="3 3"/>
+<line x1="28" y1="126" x2="440" y2="126" stroke="#D5E8D5" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.25s backwards">
-<text x="28" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">02</text>
-<text x="56" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#E6EDF3">semantica-agi/semantica</text>
-<text x="416" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">▲ 7.2k</text>
-<rect x="664" y="137" width="52" height="17" rx="9" fill="none" stroke="#234923"/>
-<text x="690.0" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D" text-anchor="middle">Python</text>
+<text x="28" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">02</text>
+<text x="56" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">semantica-agi/semantica</text>
+<text x="416" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 7.2k</text>
+<rect x="664" y="137" width="52" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
+<text x="690.0" y="150" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">Python</text>
 </g>
-<line x1="28" y1="162" x2="440" y2="162" stroke="#1A2A1A" stroke-dasharray="3 3"/>
+<line x1="28" y1="162" x2="440" y2="162" stroke="#D5E8D5" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.4s backwards">
-<text x="28" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">03</text>
-<text x="56" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#E6EDF3">anthropics/skills</text>
-<text x="416" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">▲ 169.3k</text>
-<rect x="664" y="173" width="52" height="17" rx="9" fill="none" stroke="#234923"/>
-<text x="690.0" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D" text-anchor="middle">Python</text>
+<text x="28" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">03</text>
+<text x="56" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">anthropics/skills</text>
+<text x="416" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 169.3k</text>
+<rect x="664" y="173" width="52" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
+<text x="690.0" y="186" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">Python</text>
 </g>
-<line x1="28" y1="198" x2="440" y2="198" stroke="#1A2A1A" stroke-dasharray="3 3"/>
+<line x1="28" y1="198" x2="440" y2="198" stroke="#D5E8D5" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.5499999999999999s backwards">
-<text x="28" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">04</text>
-<text x="56" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#E6EDF3">cactus-compute/needle</text>
-<text x="416" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">▲ 5.2k</text>
-<rect x="664" y="209" width="52" height="17" rx="9" fill="none" stroke="#234923"/>
-<text x="690.0" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D" text-anchor="middle">Python</text>
+<text x="28" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">04</text>
+<text x="56" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">cactus-compute/needle</text>
+<text x="416" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 5.2k</text>
+<rect x="664" y="209" width="52" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
+<text x="690.0" y="222" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">Python</text>
 </g>
-<line x1="28" y1="234" x2="440" y2="234" stroke="#1A2A1A" stroke-dasharray="3 3"/>
+<line x1="28" y1="234" x2="440" y2="234" stroke="#D5E8D5" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.7s backwards">
-<text x="28" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">05</text>
-<text x="56" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#E6EDF3">altic-dev/FluidVoice</text>
-<text x="416" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950">▲ 10.0k</text>
-<rect x="670" y="245" width="46" height="17" rx="9" fill="none" stroke="#234923"/>
-<text x="693.0" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7DBB7D" text-anchor="middle">Swift</text>
+<text x="28" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">05</text>
+<text x="56" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">altic-dev/FluidVoice</text>
+<text x="416" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 10.0k</text>
+<rect x="670" y="245" width="46" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
+<text x="693.0" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">Swift</text>
 </g>
-<line x1="458" y1="24" x2="458" y2="292" stroke="#1E3A1E" stroke-dasharray="2 4"/>
-<text x="486" y="66" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">今日扫描</text>
-<text x="486" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#A5D6A7" font-weight="700">10</text>
-<text x="486" y="106" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">新发现</text>
-<text x="586" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#A5D6A7" font-weight="700">60</text>
-<text x="586" y="106" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">增长追踪</text>
-<text x="486" y="134" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">语言分布</text>
-<text x="486" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#A5D6A7">Python</text>
-<rect x="542" y="147" width="140" height="5" rx="2.5" fill="#12210F"/>
-<rect x="542" y="147" width="84" height="5" rx="2.5" fill="#3FB950" style="animation:grow 1.2s ease 0.2s backwards"/>
-<text x="690" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">60%</text>
-<text x="486" y="174" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#A5D6A7">Rust</text>
-<rect x="542" y="167" width="140" height="5" rx="2.5" fill="#12210F"/>
-<rect x="542" y="167" width="28" height="5" rx="2.5" fill="#3FB950" style="animation:grow 1.2s ease 0.35s backwards"/>
-<text x="690" y="174" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">20%</text>
-<text x="486" y="194" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#A5D6A7">HTML</text>
-<rect x="542" y="187" width="140" height="5" rx="2.5" fill="#12210F"/>
-<rect x="542" y="187" width="14" height="5" rx="2.5" fill="#3FB950" style="animation:grow 1.2s ease 0.5s backwards"/>
-<text x="690" y="194" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A">10%</text>
-<rect x="486" y="216" width="216" height="30" rx="8" fill="none" stroke="#234923"/>
-<text x="594" y="235" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#3FB950" text-anchor="middle">📄 查看完整日报 →</text>
-<text x="716" y="300" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#5A7A5A" text-anchor="end">POWERED BY github-daily-report</text>
+<line x1="458" y1="24" x2="458" y2="292" stroke="#CBE2CB" stroke-dasharray="2 4"/>
+<text x="486" y="66" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">今日扫描</text>
+<text x="486" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#1F2328" font-weight="700">10</text>
+<text x="486" y="106" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">新发现</text>
+<text x="586" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#1F2328" font-weight="700">60</text>
+<text x="586" y="106" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">增长追踪</text>
+<text x="486" y="134" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">语言分布</text>
+<text x="486" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#1F2328">Python</text>
+<rect x="542" y="147" width="140" height="5" rx="2.5" fill="#E0EDE0"/>
+<rect x="542" y="147" width="84" height="5" rx="2.5" fill="#1A7F37" style="animation:grow 1.2s ease 0.2s backwards"/>
+<text x="690" y="154" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">60%</text>
+<text x="486" y="174" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#1F2328">Rust</text>
+<rect x="542" y="167" width="140" height="5" rx="2.5" fill="#E0EDE0"/>
+<rect x="542" y="167" width="28" height="5" rx="2.5" fill="#1A7F37" style="animation:grow 1.2s ease 0.35s backwards"/>
+<text x="690" y="174" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">20%</text>
+<text x="486" y="194" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#1F2328">HTML</text>
+<rect x="542" y="187" width="140" height="5" rx="2.5" fill="#E0EDE0"/>
+<rect x="542" y="187" width="14" height="5" rx="2.5" fill="#1A7F37" style="animation:grow 1.2s ease 0.5s backwards"/>
+<text x="690" y="194" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">10%</text>
+<rect x="486" y="216" width="216" height="30" rx="8" fill="none" stroke="#BFDDBF"/>
+<text x="594" y="235" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37" text-anchor="middle">📄 查看完整日报 →</text>
+<text x="716" y="300" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080" text-anchor="end">POWERED BY github-daily-report</text>
 </svg>

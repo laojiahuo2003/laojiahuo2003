@@ -24,9 +24,9 @@ ASSETS = os.path.join(HERE, "..", "assets")
 REPORT_REPO = "https://github.com/laojiahuo2003/github-daily-report.git"
 
 MONO = "Menlo, Consolas, 'Courier New', monospace"
-BG1, BG2 = "#0C150C", "#050A05"
-BORDER = "#1E2B1E"
-GREEN, LIGHT, DIM, DIMMER = "#3FB950", "#A5D6A7", "#7DBB7D", "#5A7A5A"
+BG1, BG2 = "#FAFDFA", "#F0F8F0"
+BORDER = "#D5E8D5"
+GREEN, LIGHT, DIM, DIMMER = "#1A7F37", "#1F2328", "#4C7C54", "#7C9080"
 
 OFFLINE = os.environ.get("LIVE_OFFLINE") == "1"
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
@@ -207,15 +207,15 @@ def build_journey(user, events, contrib):
     nth = datetime.now(timezone.utc).year - int(year) + 1
     frac = (datetime.now(timezone.utc).timetuple().tm_yday) / 366
     C = 138
-    s += f'<circle cx="62" cy="62" r="22" fill="none" stroke="#12210F" stroke-width="5"/>\n'
+    s += f'<circle cx="62" cy="62" r="22" fill="none" stroke="#E0EDE0" stroke-width="5"/>\n'
     s += (f'<circle cx="62" cy="62" r="22" fill="none" stroke="{GREEN}" stroke-width="5" '
           f'stroke-linecap="round" stroke-dasharray="{C}" stroke-dashoffset="{C*(1-frac):.0f}" '
           f'style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>\n')
     s += txt(62, 66, f"{nth}th", 10, DIM, extra=' text-anchor="middle"')
-    s += txt(100, 58, year, 28, "#E6EDF3", weight="700")
+    s += txt(100, 58, year, 28, "#1F2328", weight="700")
     s += txt(100, 78, f"GITHUBING SINCE · 第 {nth} 年", 9, DIM)
     # 分隔线
-    s += f'<line x1="290" y1="20" x2="290" y2="{H-20}" stroke="#1E3A1E" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="290" y1="20" x2="290" y2="{H-20}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
     # 最近活动
     s += txt(312, 34, "◉ 最近活动 · LIVE", 10, DIM)
     s += f'<circle cx="318" cy="48" r="3" fill="{GREEN}" class="pulse"/>\n'
@@ -230,11 +230,11 @@ def build_journey(user, events, contrib):
         if i == 0:
             s += f'<circle cx="352" cy="{y-3}" r="3" fill="{GREEN}" class="pulse"/>\n'
         else:
-            s += f'<circle cx="352" cy="{y-3}" r="3" fill="#2A4A2A"/>\n'
+            s += f'<circle cx="352" cy="{y-3}" r="3" fill="#A8C8A8"/>\n'
         s += txt(364, y, ty, 10, DIM)
         s += txt(412, y, detail, 11, LIGHT)
     # streak
-    s += f'<line x1="574" y1="20" x2="574" y2="{H-20}" stroke="#1E3A1E" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="574" y1="20" x2="574" y2="{H-20}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
     s += txt(598, 34, "STREAK", 10, DIM)
     st = contrib["streak"]
     if st is not None:
@@ -269,17 +269,17 @@ def build_picks(rep):
         s += f'<g style="animation:fadein .6s ease {.1 + i*.15}s backwards">\n'
         s += txt(28, y, f"{i+1:02d}", 11, GREEN)
         disp = name if len(name) <= 34 else name[:33] + "…"
-        s += txt(56, y, disp, 13, "#E6EDF3")
+        s += txt(56, y, disp, 13, "#1F2328")
         s += txt(416, y, f"▲ {fmt_k(stars)}", 11, GREEN)
         lw = max(44, len(lang) * 6 + 16)
-        s += f'<rect x="{W - 28 - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="#234923"/>\n'
+        s += f'<rect x="{W - 28 - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="#BFDDBF"/>\n'
         s += txt(W - 28 - lw / 2, y, lang, 9, DIM, extra=' text-anchor="middle"')
         s += '</g>\n'
         if i < len(rep["top"]) - 1:
-            s += f'<line x1="28" y1="{y + 12}" x2="440" y2="{y + 12}" stroke="#1A2A1A" stroke-dasharray="3 3"/>\n'
+            s += f'<line x1="28" y1="{y + 12}" x2="440" y2="{y + 12}" stroke="#D5E8D5" stroke-dasharray="3 3"/>\n'
     # 右列
     XR = 486
-    s += f'<line x1="458" y1="24" x2="458" y2="{H-24}" stroke="#1E3A1E" stroke-dasharray="2 4"/>\n'
+    s += f'<line x1="458" y1="24" x2="458" y2="{H-24}" stroke="#CBE2CB" stroke-dasharray="2 4"/>\n'
     s += txt(XR, 66, "今日扫描", 10, DIM)
     for i, (num, lab) in enumerate([(rep["new"], "新发现"), (rep["fast"], "增长追踪")]):
         x = XR + i * 100
@@ -292,11 +292,11 @@ def build_picks(rep):
         y = 150 + i * 20
         pct = cnt / total * 100
         s += txt(XR, y + 4, lang[:8], 10, LIGHT)
-        s += f'<rect x="{XR + 56}" y="{y - 3}" width="140" height="5" rx="2.5" fill="#12210F"/>\n'
+        s += f'<rect x="{XR + 56}" y="{y - 3}" width="140" height="5" rx="2.5" fill="#E0EDE0"/>\n'
         s += (f'<rect x="{XR + 56}" y="{y - 3}" width="{140 * pct / 100:.0f}" height="5" rx="2.5" '
               f'fill="{GREEN}" style="animation:grow 1.2s ease {.2 + i*.15}s backwards"/>\n')
         s += txt(XR + 204, y + 4, f"{pct:.0f}%", 9, DIMMER)
-    s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="#234923"/>\n'
+    s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="#BFDDBF"/>\n'
     s += txt(XR + 108, 235, "📄 查看完整日报 →", 11, GREEN, extra=' text-anchor="middle"')
     s += txt(W - 28, H - 16, "POWERED BY github-daily-report", 9, DIMMER, extra=' text-anchor="end"')
     s += "</svg>\n"
@@ -306,7 +306,7 @@ def build_picks(rep):
 def build_stats(user, contrib):
     W, H = 744, 208
     s = svg_open(W, H, "统计 neofetch")
-    s += f'<rect x="0" y="0" width="{W}" height="36" fill="{GREEN}" opacity="0.05" style="animation:scan 5s linear infinite"/>\n'
+    s += f'<rect x="0" y="0" width="{W}" height="36" fill="{GREEN}" opacity="0.08" style="animation:scan 5s linear infinite"/>\n'
     s += txt(28, 44, f"~/{USER} $ neofetch --stats", 13, GREEN)
     s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.1s steps(1) infinite"/>\n'
 
@@ -320,7 +320,7 @@ def build_stats(user, contrib):
     for i, (k, v, frac) in enumerate(rows):
         y += 26
         s += txt(28, y, k, 12, GREEN)
-        s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="#0F1A0F"/>\n'
+        s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="#E0EDE0"/>\n'
         s += (f'<rect x="150" y="{y-10}" width="{440*frac:.0f}" height="8" rx="4" fill="{GREEN}" '
               f'style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) {i*0.15}s backwards"/>\n')
         s += txt(600, y, v, 12, DIM, extra=' text-anchor="end"')

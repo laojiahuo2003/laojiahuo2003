@@ -7,11 +7,11 @@
 import os
 
 W, H = 920, 300
-BG   = "#0B0E13"   # 深空底
-INK  = "#E6EDF3"   # 主文字
-DIM  = "#8B949E"   # 次文字
-ACC  = "#3FB950"   # 强调绿（GitHub green）
-ACC2 = "#2EA043"   # 深一档绿
+BG   = "#FBFDFB"   # 浅底（白底页面适配）
+INK  = "#1F2328"   # 主文字
+DIM  = "#57606A"   # 次文字
+ACC  = "#1A7F37"   # 强调绿（GitHub green dark）
+ACC2 = "#2DA44E"   # 深一档绿
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
@@ -28,7 +28,7 @@ for gx in range(24, W - 16, 34):
         jitter_x = random.randint(-3, 3)
         jitter_y = random.randint(-3, 3)
         r = random.choice([1, 1, 1, 1.5])
-        o = random.choice([0.05, 0.08, 0.10, 0.14])
+        o = random.choice([0.14, 0.20, 0.28, 0.36])
         dots.append(f'<circle cx="{gx+jitter_x}" cy="{gy+jitter_y}" r="{r}" fill="{INK}" opacity="{o}"/>')
 dots_svg = "\n  ".join(dots)
 
@@ -48,12 +48,12 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
     <stop offset="1" stop-color="{ACC}" stop-opacity="0"/>
   </linearGradient>
   <radialGradient id="orb" cx=".5" cy=".5" r=".5">
-    <stop offset="0" stop-color="{ACC}" stop-opacity=".22"/>
+    <stop offset="0" stop-color="{ACC}" stop-opacity=".14"/>
     <stop offset="1" stop-color="{ACC}" stop-opacity="0"/>
   </radialGradient>
 </defs>
 
-<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>
+<rect width="{W}" height="{H}" rx="18" fill="{BG}" stroke="#D8E8D8"/>
 <g class="dots">{dots_svg}</g>
 
 <!-- 呼吸光晕（右上方） -->
