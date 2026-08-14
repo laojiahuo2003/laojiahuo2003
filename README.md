@@ -18,11 +18,13 @@
 > 由我的 [github-daily-report](https://github.com/laojiahuo2003/github-daily-report) 机器人每日自动抓取
 
 <!-- daily-picks:start -->
-**每日精选** · 2026-08-06
+**每日精选** · 2026-08-14
 
-- [cloudflare/computer](https://github.com/cloudflare/computer) · ⭐3.4k · `TypeScript`
-- [huangruiteng/loopx](https://github.com/huangruiteng/loopx) · ⭐2.3k · `Python`
-- [TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) · ⭐15.2k · `TypeScript`
+- [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) · ⭐16.0k · `HTML`
+- [semantica-agi/semantica](https://github.com/semantica-agi/semantica) · ⭐7.2k · `Python`
+- [anthropics/skills](https://github.com/anthropics/skills) · ⭐169.3k · `Python`
+- [cactus-compute/needle](https://github.com/cactus-compute/needle) · ⭐5.2k · `Python`
+- [altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice) · ⭐10.0k · `Swift`
 <!-- daily-picks:end -->
 
 ---
