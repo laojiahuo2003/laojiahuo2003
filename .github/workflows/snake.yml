@@ -22,18 +22,19 @@ jobs:
       - name: 检出仓库
         uses: actions/checkout@v4
 
-      - name: 生成贪吃蛇（浅色 / 深色两版）
+      - name: 生成贪吃蛇（浅色 SVG / 深色 SVG / 动画 GIF）
         uses: Platane/snk@v3
         with:
           github_user_name: laojiahuo2003
           outputs: |
             output/snake.svg?color_snake=#2e7d32&color_dots=#f1f8e9,#dcedc8,#a5d6a7,#66bb6a,#2e7d32
             output/snake-dark.svg?color_snake=#66bb6a&color_dots=#141414,#1b5e20,#2e7d32,#43a047,#81c784
+            output/snake.gif?color_snake=#66bb6a&color_dots=#141414,#1b5e20,#2e7d32,#43a047,#81c784
 
       - name: 提交并推送
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/snake.svg output/snake-dark.svg
+          git add output/
           git commit -m "🎮 更新贡献贪吃蛇动画" || echo "贡献没有变化，跳过提交"
           git push
