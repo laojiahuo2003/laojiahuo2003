@@ -39,7 +39,7 @@ def main():
     section = re.search(r"## ✨ 新发现项目(.*?)(?=\n## |\Z)", content, re.S)
     entries = []
     if section:
-        for m in re.finditer(r"- \*\*\[([^\]]+)\]\(([^)]+)\)\*\* ⭐(\d+)(?:[^\n]*?) `(\\S+)`", section.group(1)):
+        for m in re.finditer(r"- \*\*\[([^\]]+)\]\(([^)]+)\)\*\* ⭐(\d+)(?:[^\n]*?) `(\S+)`", section.group(1)):
             entries.append((m.group(1), m.group(2), int(m.group(3)), m.group(4)))
 
     lines = [f"**每日精选** · {date_str}", ""]
