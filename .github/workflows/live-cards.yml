@@ -2,6 +2,9 @@ name: 🎴 生成实时卡片
 
 # 每小时刷新：足迹条 / 每日精选 / 统计（数据来自 GitHub API + 日报仓库）
 on:
+  push:
+    branches: [main]
+    paths: ['scripts/gen_live_cards.py']
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
