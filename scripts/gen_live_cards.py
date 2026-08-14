@@ -112,8 +112,9 @@ def fetch_events():
         t, p = e["type"], e.get("payload", {})
         repo, at = e["repo"]["name"], e["created_at"]
         if t == "PushEvent":
+            n = len(p.get("commits", []))
             out.append({"type": "push", "repo": repo, "created_at": at,
-                        "detail": f"{len(p.get('commits', []))} commits"})
+                        "detail": f"{n} commits" if n else ""})
         elif t == "PullRequestEvent":
             title = p.get("pull_request", {}).get("title", "")
             out.append({"type": "PR", "repo": repo, "created_at": at,
