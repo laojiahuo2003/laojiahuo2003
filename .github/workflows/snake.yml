@@ -22,14 +22,13 @@ jobs:
       - name: 检出仓库
         uses: actions/checkout@v4
 
-      - name: 生成贪吃蛇（GitHub 官方绿色梯度，日夜同款）
+      - name: 生成贪吃蛇（GitHub 官方绿色梯度，SVG 自带动画）
         uses: Platane/snk@v3
         with:
           github_user_name: laojiahuo2003
           outputs: |
             output/snake.svg?color_snake=#006d32&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
             output/snake-dark.svg?color_snake=#39d353&color_dots=#161b22,#033a16,#196c2f,#2ea043,#56d364
-            output/snake.gif?color_snake=#39d353&color_dots=#161b22,#033a16,#196c2f,#2ea043,#56d364
 
       - name: 提交并推送
         run: |

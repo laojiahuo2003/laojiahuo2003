@@ -29,7 +29,7 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/output/snake.gif">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/output/snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/output/snake.svg">
     <img alt="贡献贪吃蛇" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/output/snake.svg" width="80%" />
   </picture>
