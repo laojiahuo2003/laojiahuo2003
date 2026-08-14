@@ -174,6 +174,16 @@ def fetch_contributions():
 
 def fetch_report():
     """克隆日报仓库，返回（日期, top5 列表, 新发现数, 增长数, 语言分布 dict）"""
+    if OFFLINE:
+        demo = [
+            ("anthropics/skills", "https://github.com/anthropics/skills", 169300, "Python"),
+            ("cathrynlavery/diagram-design", "https://github.com/cathrynlavery/diagram-design", 16000, "HTML"),
+            ("altic-dev/FluidVoice", "https://github.com/altic-dev/FluidVoice", 10000, "Swift"),
+            ("semantica-agi/semantica", "https://github.com/semantica-agi/semantica", 7200, "Python"),
+            ("cactus-compute/needle", "https://github.com/cactus-compute/needle", 5200, "Python"),
+        ]
+        return {"date": "2026-08-14 09:36", "top": demo, "new": 98, "fast": 54,
+                "langs": {"Python": 3, "HTML": 1, "Swift": 1}}
     tmp = "/tmp/live-report"
     subprocess.run(["rm", "-rf", tmp], check=False)
     r = subprocess.run(["git", "clone", "--quiet", "--depth", "1", REPORT_REPO, tmp],
@@ -325,12 +335,13 @@ def build_picks(rep):
         y += 36
         s += f'<g style="animation:fadein .6s ease {.1 + i*.15}s backwards">\n'
         s += txt(28, y, f"{i+1:02d}", 11, GREEN)
-        disp = name if len(name) <= 34 else name[:33] + "…"
-        s += txt(56, y, disp, 13, INK)
-        s += txt(416, y, f"▲ {fmt_k(stars)}", 11, GREEN)
         lw = max(44, len(lang) * 6 + 16)
-        s += f'<rect x="{W - 28 - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="{PILL}"/>\n'
-        s += txt(W - 28 - lw / 2, y, lang, 9, DIM, extra=' text-anchor="middle"')
+        pr = 440  # 左列右边界，与行间虚线对齐，避免压到右列
+        disp = name if len(name) <= 28 else name[:27] + "…"
+        s += txt(56, y, disp, 13, INK)
+        s += txt(pr - lw - 12, y, f"▲ {fmt_k(stars)}", 11, GREEN, extra=' text-anchor="end"')
+        s += f'<rect x="{pr - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="{PILL}"/>\n'
+        s += txt(pr - lw / 2, y, lang, 9, DIM, extra=' text-anchor="middle"')
         s += '</g>\n'
         if i < len(rep["top"]) - 1:
             s += f'<line x1="28" y1="{y + 12}" x2="440" y2="{y + 12}" stroke="{DASH}" stroke-dasharray="3 3"/>\n'

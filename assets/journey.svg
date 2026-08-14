@@ -22,7 +22,7 @@
 <line x1="290" y1="20" x2="290" y2="166" stroke="#CBE2CB" stroke-dasharray="2 4"/>
 <text x="312" y="34" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">◉ 最近活动 · LIVE</text>
 <circle cx="318" cy="48" r="3" fill="#1A7F37" class="pulse"/>
-<text x="312" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7C9080">5h</text>
+<text x="312" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7C9080">6h</text>
 <circle cx="352" cy="73" r="3" fill="#1A7F37" class="pulse"/>
 <text x="364" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">push</text>
 <text x="418" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1F2328">github-daily-report</text>
@@ -44,7 +44,7 @@
 <text x="418" y="164" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1F2328">robonix · branch</text>
 <line x1="574" y1="20" x2="574" y2="166" stroke="#CBE2CB" stroke-dasharray="2 4"/>
 <text x="598" y="34" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">STREAK</text>
-<text x="598" y="72" font-size="24" class="flick">🔥</text>
-<text x="634" y="70" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="22" fill="#1F2328" font-weight="700">1 天</text>
-<text x="598" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">连续贡献 · 最长 4 天</text>
+<text x="598" y="66" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="24" fill="#1F2328">🚀</text>
+<text x="634" y="64" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="20" fill="#1F2328" font-weight="700">keep</text>
+<text x="598" y="90" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">coding every day</text>
 </svg>
