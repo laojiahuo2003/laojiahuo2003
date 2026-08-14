@@ -7,18 +7,18 @@
 @keyframes grow{from{width:0}}
 @keyframes ringdraw{from{stroke-dashoffset:138}}
 @keyframes flick{0%,100%{transform:scale(1)}30%{transform:scale(1.15)}60%{transform:scale(.95)}}
-@keyframes scan{0%{top:-40px}100%{top:110%}}
+@keyframes scan{0%{opacity:.06}100%{opacity:.06}}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.pulse{animation:pulse 2s ease infinite}
-.flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}
+.pulse{animation:pulse 4s ease infinite}
+.flick{animation:flick 3.6s ease-in-out infinite;transform-origin:center}
 </style>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFDFA"/><stop offset="1" stop-color="#F0F8F0"/></linearGradient></defs>
 <rect width="744" height="316" rx="14" fill="url(#bg)" stroke="#D5E8D5"/>
-<rect x="28" y="34" width="3" height="8" rx="1" fill="#1A7F37" style="transform-origin:29.5px 38px;animation:eq 1.2s ease 0s infinite"/>
-<rect x="34" y="34" width="3" height="14" rx="1" fill="#1A7F37" style="transform-origin:35.5px 38px;animation:eq 1.2s ease -0.3s infinite"/>
-<rect x="40" y="34" width="3" height="6" rx="1" fill="#1A7F37" style="transform-origin:41.5px 38px;animation:eq 1.2s ease -0.6s infinite"/>
-<rect x="46" y="34" width="3" height="12" rx="1" fill="#1A7F37" style="transform-origin:47.5px 38px;animation:eq 1.2s ease -0.15s infinite"/>
-<rect x="52" y="34" width="3" height="9" rx="1" fill="#1A7F37" style="transform-origin:53.5px 38px;animation:eq 1.2s ease -0.45s infinite"/>
+<rect x="28" y="34" width="3" height="8" rx="1" fill="#1A7F37" style="transform-origin:29.5px 38px;animation:eq 2.4s ease 0s infinite"/>
+<rect x="34" y="34" width="3" height="14" rx="1" fill="#1A7F37" style="transform-origin:35.5px 38px;animation:eq 2.4s ease -0.3s infinite"/>
+<rect x="40" y="34" width="3" height="6" rx="1" fill="#1A7F37" style="transform-origin:41.5px 38px;animation:eq 2.4s ease -0.6s infinite"/>
+<rect x="46" y="34" width="3" height="12" rx="1" fill="#1A7F37" style="transform-origin:47.5px 38px;animation:eq 2.4s ease -0.15s infinite"/>
+<rect x="52" y="34" width="3" height="9" rx="1" fill="#1A7F37" style="transform-origin:53.5px 38px;animation:eq 2.4s ease -0.45s infinite"/>
 <text x="66" y="44" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="14" fill="#1F2328" font-weight="600">GitHub 趋势雷达</text>
 <rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="#1A7F37"/>
 <circle cx="228" cy="38" r="2.5" fill="#1A7F37" class="pulse"/>
@@ -27,7 +27,7 @@
 <g style="animation:fadein .6s ease 0.1s backwards">
 <text x="28" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">01</text>
 <text x="56" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">cathrynlavery/diagram-design</text>
-<text x="416" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 16.0k</text>
+<text x="416" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 16.2k</text>
 <rect x="672" y="101" width="44" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
 <text x="694.0" y="114" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">HTML</text>
 </g>
@@ -59,7 +59,7 @@
 <g style="animation:fadein .6s ease 0.7s backwards">
 <text x="28" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">05</text>
 <text x="56" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#1F2328">altic-dev/FluidVoice</text>
-<text x="416" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 10.0k</text>
+<text x="416" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#1A7F37">▲ 10.1k</text>
 <rect x="670" y="245" width="46" height="17" rx="9" fill="none" stroke="#BFDDBF"/>
 <text x="693.0" y="258" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#4C7C54" text-anchor="middle">Swift</text>
 </g>

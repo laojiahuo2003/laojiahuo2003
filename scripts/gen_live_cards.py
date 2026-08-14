@@ -181,10 +181,10 @@ def svg_open(w, h, label):
         "@keyframes grow{from{width:0}}\n"
         "@keyframes ringdraw{from{stroke-dashoffset:138}}\n"
         "@keyframes flick{0%,100%{transform:scale(1)}30%{transform:scale(1.15)}60%{transform:scale(.95)}}\n"
-        "@keyframes scan{0%{top:-40px}100%{top:110%}}\n"
+        "@keyframes scan{0%{opacity:.06}100%{opacity:.06}}\n"
         "@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}\n"
-        ".pulse{animation:pulse 2s ease infinite}\n"
-        ".flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}\n"
+        ".pulse{animation:pulse 4s ease infinite}\n"
+        ".flick{animation:flick 3.6s ease-in-out infinite;transform-origin:center}\n"
         "</style>\n"
         f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG1}"/><stop offset="1" stop-color="{BG2}"/></linearGradient></defs>\n'
@@ -256,7 +256,7 @@ def build_picks(rep):
     # 头部
     for i, (h, d) in enumerate([(8, 0), (14, -.3), (6, -.6), (12, -.15), (9, -.45)]):
         s += (f'<rect x="{28 + i*6}" y="34" width="3" height="{h}" rx="1" fill="{GREEN}" '
-              f'style="transform-origin:{29.5 + i*6}px 38px;animation:eq 1.2s ease {d}s infinite"/>\n')
+              f'style="transform-origin:{29.5 + i*6}px 38px;animation:eq 2.4s ease {d}s infinite"/>\n')
     s += txt(66, 44, "GitHub 趋势雷达", 14, LIGHT, weight="600")
     s += f'<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="{GREEN}"/>\n'
     s += f'<circle cx="228" cy="38" r="2.5" fill="{GREEN}" class="pulse"/>\n'
@@ -306,9 +306,8 @@ def build_picks(rep):
 def build_stats(user, contrib):
     W, H = 744, 208
     s = svg_open(W, H, "统计 neofetch")
-    s += f'<rect x="0" y="0" width="{W}" height="36" fill="{GREEN}" opacity="0.08" style="animation:scan 5s linear infinite"/>\n'
     s += txt(28, 44, f"~/{USER} $ neofetch --stats", 13, GREEN)
-    s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.1s steps(1) infinite"/>\n'
+    s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.4s steps(1) infinite"/>\n'
 
     rows = [
         ("stars", "36", 0.38),

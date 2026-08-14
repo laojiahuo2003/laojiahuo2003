@@ -23,8 +23,8 @@ dots = []
 # 微妙点阵：网格抖动，营造质感
 import random
 random.seed(42)
-for gx in range(24, W - 16, 34):
-    for gy in range(24, H - 16, 34):
+for gx in range(24, W - 16, 48):
+    for gy in range(24, H - 16, 48):
         jitter_x = random.randint(-3, 3)
         jitter_y = random.randint(-3, 3)
         r = random.choice([1, 1, 1, 1.5])
@@ -35,11 +35,9 @@ dots_svg = "\n  ".join(dots)
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Embodied Intelligence">
 <style>
   @keyframes breathe {{ 0%,100% {{ opacity:.32 }} 50% {{ opacity:.65 }} }}
-  @keyframes flow {{ to {{ stroke-dashoffset: -320 }} }}
-  @keyframes drift {{ 0%,100% {{ transform: translate(0,0) }} 50% {{ transform: translate(8px,-6px) }} }}
   .glow   {{ animation: breathe 7s ease-in-out infinite }}
-  .line   {{ stroke-dasharray: 6 10; animation: flow 14s linear infinite }}
-  .dots   {{ animation: drift 18s ease-in-out infinite }}
+  .line   {{ stroke-dasharray: 6 10 }}
+  
 </style>
 <defs>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
