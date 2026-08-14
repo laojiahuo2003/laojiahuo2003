@@ -1,7 +1,10 @@
 name: 🎮 生成贡献贪吃蛇
 
-# 每天自动更新一次，也可以去 Actions 页面手动触发
+# 改动 README 或 workflow 时自动生成，每天自动更新一次，也可手动触发
 on:
+  push:
+    branches: [main]
+    paths: ['README.md', '.github/workflows/**']
   schedule:
     - cron: "15 2 * * *"
   workflow_dispatch:
