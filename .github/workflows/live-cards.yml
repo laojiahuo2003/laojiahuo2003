@@ -1,0 +1,32 @@
+name: 🎴 生成实时卡片
+
+# 每小时刷新：足迹条 / 每日精选 / 统计（数据来自 GitHub API + 日报仓库）
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 检出主页仓库
+        uses: actions/checkout@v4
+
+      - name: 生成三张实时卡片
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/gen_live_cards.py
+
+      - name: 提交并推送
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/journey.svg assets/picks.svg assets/stats.svg
+          git commit -m "🎴 刷新实时卡片" || echo "无变化，跳过"
+          git push
