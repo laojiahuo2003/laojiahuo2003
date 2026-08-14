@@ -25,11 +25,11 @@
 <text x="312" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">5h</text>
 <circle cx="352" cy="73" r="3" fill="#3FB950" class="pulse"/>
 <text x="364" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">push</text>
-<text x="418" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">github-daily-report · 0…</text>
+<text x="418" y="76" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">github-daily-report</text>
 <text x="312" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">1d</text>
 <circle cx="352" cy="95" r="3" fill="#2A4A2A"/>
 <text x="364" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">push</text>
-<text x="418" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">lite3-dataset-record · …</text>
+<text x="418" y="98" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">lite3-dataset-record</text>
 <text x="312" y="120" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">1d</text>
 <circle cx="352" cy="117" r="3" fill="#2A4A2A"/>
 <text x="364" y="120" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">star</text>
@@ -37,7 +37,7 @@
 <text x="312" y="142" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">2d</text>
 <circle cx="352" cy="139" r="3" fill="#2A4A2A"/>
 <text x="364" y="142" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">push</text>
-<text x="418" y="142" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">skill-observe-rbnx · 0 …</text>
+<text x="418" y="142" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#A5D6A7">skill-observe-rbnx</text>
 <text x="312" y="164" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#5A7A5A">8d</text>
 <circle cx="352" cy="161" r="3" fill="#2A4A2A"/>
 <text x="364" y="164" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7DBB7D">create</text>
