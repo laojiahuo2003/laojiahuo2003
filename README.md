@@ -13,6 +13,20 @@
 
 ---
 
+### Daily Picks
+
+> 由我的 [github-daily-report](https://github.com/laojiahuo2003/github-daily-report) 机器人每日自动抓取
+
+<!-- daily-picks:start -->
+**每日精选** · 2026-08-06
+
+- [cloudflare/computer](https://github.com/cloudflare/computer) · ⭐3.4k · `TypeScript`
+- [huangruiteng/loopx](https://github.com/huangruiteng/loopx) · ⭐2.3k · `Python`
+- [TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) · ⭐15.2k · `TypeScript`
+<!-- daily-picks:end -->
+
+---
+
 <p align="center">
   <img src="https://github-readme-stats-wheat-six.vercel.app/api?username=laojiahuo2003&show_icons=true&theme=shadow_green&hide=issues&line_height=24" alt="GitHub 统计" width="49%" />
   <img src="https://github-readme-stats-wheat-six.vercel.app/api/top-langs/?username=laojiahuo2003&layout=compact&show_icons=true&include_all_commits=true&theme=shadow_green&card_width=360" alt="语言占比" width="49%" />
