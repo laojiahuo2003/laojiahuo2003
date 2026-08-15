@@ -8,6 +8,14 @@
 
 <p align="center">
   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg">
+    <img alt="打字机自我介绍" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg" width="90%" />
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey.svg">
     <img alt="足迹：加入年份 · 最近活动 · 连续贡献" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey.svg" width="100%" />
@@ -62,6 +70,10 @@
 </p>
 
 ---
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=laojiahuo2003&label=%E8%AE%BF%E5%AE%A2&color=1a7f37&style=flat-square" alt="访客计数" />
+</p>
 
 <p align="center">
   <a href="mailto:2944346255@qq.com">2944346255@qq.com</a>
