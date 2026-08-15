@@ -36,4 +36,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add output/
           git commit -m "🎮 更新贡献贪吃蛇动画" || echo "贡献没有变化，跳过提交"
+          # 远端可能已被 live-cards 等其他 workflow 推进，先 rebase 再推
+          git pull --rebase
           git push
