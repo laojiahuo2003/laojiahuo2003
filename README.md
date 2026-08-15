@@ -7,18 +7,14 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg">
-    <img alt="打字机自我介绍" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg" width="90%" />
-  </picture>
+  <a href="https://github.com/laojiahuo2003"><sub>🏠 GitHub 主页 · 仓库与联系方式</sub></a>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg">
-    <img alt="杭州实时天气" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg" width="80%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg">
+    <img alt="打字机自我介绍" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/typing.svg" width="100%" />
   </picture>
 </p>
 
@@ -30,8 +26,6 @@
   </picture>
 </p>
 
-### 🔥 Daily Picks
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks-dark.svg">
@@ -39,8 +33,6 @@
     <img alt="每日精选：GitHub 趋势雷达" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg" width="100%" />
   </picture>
 </p>
-
-### ⚡ Projects
 
 <p align="center">
   <picture>
@@ -51,15 +43,6 @@
 </p>
 
 <p align="center">
-  <sub>[bird-OS](https://github.com/laojiahuo2003/bird-OS) ·
-  [CXRAgent](https://github.com/laojiahuo2003/CXRAgent) ·
-  [mini-chatgpt](https://github.com/laojiahuo2003/mini-chatgpt) ·
-  [BabyCode](https://github.com/laojiahuo2003/BabyCode)</sub>
-</p>
-
-### 📊 Stats
-
-<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/stats-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/stats.svg">
@@ -67,7 +50,13 @@
   </picture>
 </p>
 
-### 🕐 作息分析
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg">
+    <img alt="杭州实时天气" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg" width="100%" />
+  </picture>
+</p>
 
 <p align="center">
   <picture>
@@ -77,8 +66,6 @@
   </picture>
 </p>
 
-### 🐍 Contributions
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/output/snake-dark.svg">
@@ -87,18 +74,10 @@
   </picture>
 </p>
 
----
-
-### 👀 Visitors
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors.svg">
-    <img alt="访客记录" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors.svg" width="90%" />
+    <img alt="访客记录" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors.svg" width="100%" />
   </picture>
-</p>
-
-<p align="center">
-  <a href="mailto:2944346255@qq.com">2944346255@qq.com</a>
 </p>

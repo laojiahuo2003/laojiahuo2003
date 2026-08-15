@@ -13,6 +13,7 @@ import json
 import os
 import sys
 import urllib.request
+from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
@@ -27,6 +28,7 @@ PALETTES = {
 }
 
 LAT, LON = 30.2741, 120.1551   # 杭州
+CST = timezone(timedelta(hours=8))   # CI 在 UTC 上跑，时间戳必须显式 +8
 OFFLINE = os.environ.get("LIVE_OFFLINE") == "1"
 
 W, H = 744, 124
@@ -65,8 +67,9 @@ def caption(code, t, app):
 
 
 def fetch():
+    ts = datetime.now(CST).strftime("%H:%M")
     if OFFLINE:
-        return {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3}
+        return {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3, "ts": ts}
     url = (f"https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}"
            f"&current=temperature_2m,apparent_temperature,relative_humidity_2m,"
            f"weather_code,wind_speed_10m&timezone=Asia%2FShanghai")
@@ -75,10 +78,10 @@ def fetch():
             c = json.load(r)["current"]
         return {"temp": c["temperature_2m"], "app": c["apparent_temperature"],
                 "rh": c["relative_humidity_2m"], "code": c["weather_code"],
-                "wind": c["wind_speed_10m"]}
+                "wind": c["wind_speed_10m"], "ts": ts}
     except Exception as e:
         print("天气获取失败，使用演示数据:", e, file=sys.stderr)
-        return {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3}
+        return {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3, "ts": ts}
 
 
 def esc(s):
@@ -93,12 +96,12 @@ def build(pal, d):
     b = ['<style>@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}\n'
          '@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n</style>\n']
 
-    # 头部：脉冲点 + 杭州 · 此刻 + 右侧 LIVE
+    # 头部：脉冲点 + 标题 + 右侧更新时间（与作息钟同一规格：15px 标题 / 11px 说明）
     b.append(f'<circle cx="28" cy="25" r="3" fill="{acc}" style="animation:pulse 2s ease infinite"/>\n')
-    b.append(f'<text x="40" y="29" font-family="{SANS}" font-size="12" font-weight="600" '
+    b.append(f'<text x="40" y="29" font-family="{SANS}" font-size="15" font-weight="600" '
              f'fill="{ink}">杭州 · 此刻</text>\n')
-    b.append(f'<text x="{W - 26}" y="29" text-anchor="end" font-family="{SANS}" font-size="10" '
-             f'fill="{dimmer}">LIVE · 每小时刷新</text>\n')
+    b.append(f'<text x="{W - 26}" y="29" text-anchor="end" font-family="{SANS}" font-size="11" '
+             f'fill="{dim}">更新于 {d["ts"]}</text>\n')
 
     # 主体：emoji + 大温度 + 描述列
     b.append(f'<g style="animation:fadein .6s ease .1s backwards">\n')

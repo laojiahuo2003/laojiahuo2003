@@ -3,8 +3,8 @@
 @keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 </style>
 <circle cx="28" cy="25" r="3" fill="#3fb950" style="animation:pulse 2s ease infinite"/>
-<text x="40" y="29" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#f0f6fc">杭州 · 此刻</text>
-<text x="718" y="29" text-anchor="end" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#6e7681">LIVE · 每小时刷新</text>
+<text x="40" y="29" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#f0f6fc">杭州 · 此刻</text>
+<text x="718" y="29" text-anchor="end" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#8b949e">更新于 13:49</text>
 <g style="animation:fadein .6s ease .1s backwards">
 <text x="28" y="88" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="34">⛈️</text>
 <text x="86" y="90" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f0f6fc">30°</text>
