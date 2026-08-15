@@ -4,12 +4,12 @@
 </style>
 <circle cx="28" cy="25" r="3" fill="#3fb950" style="animation:pulse 2s ease infinite"/>
 <text x="40" y="29" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#f0f6fc">杭州 · 此刻</text>
-<text x="718" y="29" text-anchor="end" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#8b949e">更新于 13:49</text>
+<text x="718" y="29" text-anchor="end" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#8b949e">更新于 15:00</text>
 <g style="animation:fadein .6s ease .1s backwards">
 <text x="28" y="88" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="34">⛈️</text>
-<text x="86" y="90" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f0f6fc">30°</text>
-<text x="170" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" font-weight="600" fill="#f0f6fc">雷暴</text>
-<text x="170" y="88" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#8b949e">体感 36° · 湿度 79% · 风 4 km/h</text>
+<text x="86" y="90" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f0f6fc">27°</text>
+<text x="170" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" font-weight="600" fill="#f0f6fc">雷暴冰雹</text>
+<text x="170" y="88" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#8b949e">体感 34° · 湿度 91% · 风 2 km/h</text>
 </g>
 <line x1="478" y1="46" x2="478" y2="94" stroke="#30363d"/>
 <text x="502" y="64" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#3fb950">雷雨天 · 先拔电源再写代码 ⚡</text>
