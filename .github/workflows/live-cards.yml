@@ -21,12 +21,16 @@ jobs:
       - name: 检出主页仓库
         uses: actions/checkout@v4
 
-      - name: 生成实时卡片（足迹 / 精选 / 统计 / 访客）
+      - name: 生成实时卡片（足迹 / 精选 / 统计）
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          python3 scripts/gen_live_cards.py
-          python3 scripts/gen_visitors.py
+        run: python3 scripts/gen_live_cards.py
+
+      # Traffic API 需要 administration 权限，GITHUB_TOKEN 给不了，必须用 PAT（repo secret: GH_PAT）
+      - name: 生成访客卡片（Traffic API）
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+        run: python3 scripts/gen_visitors.py
 
       - name: 提交并推送
         run: |
