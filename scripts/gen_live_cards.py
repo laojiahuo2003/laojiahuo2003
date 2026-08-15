@@ -226,6 +226,38 @@ def fmt_k(n):
     return f"{n/1000:.1f}k" if n >= 1000 else str(n)
 
 
+# 像素宽度估算（CJK=字号；ASCII 三档）。截断必须按像素而不是字符数：
+# 24 个汉字 ≈ 264px 而 24 个字母 ≈ 150px，按字符数截断会让中文行溢出。
+_NARROW = set("iljItf.,:;'|!()[]{}/\\ ")
+_WIDE = set("mwMW@")
+
+
+def est_w(s, fs):
+    w = 0.0
+    for ch in s:
+        if ord(ch) > 0x2E7F:
+            w += fs
+        elif ch in _NARROW:
+            w += fs * 0.31
+        elif ch in _WIDE:
+            w += fs * 0.88
+        else:
+            w += fs * 0.58
+    return w
+
+
+def clip_w(s, fs, max_px):
+    """按像素宽度截断，超出部分以 … 结尾"""
+    if est_w(s, fs) <= max_px:
+        return s
+    out = ""
+    for ch in s:
+        if est_w(out + ch + "…", fs) > max_px:
+            return out + "…"
+        out += ch
+    return out
+
+
 # ---------------- SVG 组件 ----------------
 
 def svg_open(w, h, label):
@@ -278,8 +310,8 @@ def build_journey(user, events, contrib):
         if det:
             det = " · " + det
         detail = f"{name}{det}"
-        if len(detail) > 24:
-            detail = detail[:23] + "…"
+        # 活动详情止于 574 分隔线前（列起点 418，预留安全边距）
+        detail = clip_w(detail, 11, 140)
         y += 22
         s += txt(312, y, t, 10, DIMMER)
         if i == 0:
@@ -309,10 +341,12 @@ def build_picks(rep):
     W, H = 744, 316
     s = svg_open(W, H, "每日精选")
     # 头部
+    # 标题实测约 115px（15px semibold），胶囊紧随标题之后而非固定远端
     s += txt(28, 44, "GitHub 趋势雷达", 15, LIGHT, weight="600")
-    s += f'<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="{GREEN}"/>\n'
-    s += f'<circle cx="228" cy="38" r="2.5" fill="{GREEN}" class="pulse"/>\n'
-    s += txt(235, 42, "LIVE", 9, GREEN)
+    pill_x = 28 + est_w("GitHub 趋势雷达", 15) + 14
+    s += f'<rect x="{pill_x:.0f}" y="30" width="46" height="16" rx="8" fill="none" stroke="{GREEN}"/>\n'
+    s += f'<circle cx="{pill_x + 12:.0f}" cy="38" r="2.5" fill="{GREEN}" class="pulse"/>\n'
+    s += txt(pill_x + 19, 42, "LIVE", 9, GREEN)
     s += txt(W - 28, 42, rep['date'], 10, DIM, extra=' text-anchor="end"')
     # 左列 Top5
     y = 78
@@ -322,7 +356,8 @@ def build_picks(rep):
         s += txt(28, y, f"{i+1:02d}", 11, GREEN)
         lw = max(44, len(lang) * 6 + 16)
         pr = 440  # 左列右边界，与行间虚线对齐，避免压到右列
-        disp = name if len(name) <= 28 else name[:27] + "…"
+        # 仓库名按像素截断（28 个字母 ≈ 190px，28 个汉字 ≈ 364px 会压到星标胶囊）
+        disp = clip_w(name, 13, 240)
         s += txt(56, y, disp, 13, INK)
         s += txt(pr - lw - 12, y, f"▲ {fmt_k(stars)}", 11, GREEN, extra=' text-anchor="end"')
         s += f'<rect x="{pr - lw}" y="{y-13}" width="{lw}" height="17" rx="9" fill="none" stroke="{PILL}"/>\n'
@@ -376,7 +411,8 @@ def build_stats(user, contrib, stars):
         s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="{TRACK}"/>\n'
         s += (f'<rect x="150" y="{y-10}" width="{440*frac:.0f}" height="8" rx="4" fill="{GREEN}" '
               f'style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) {i*0.15}s backwards"/>\n')
-        s += txt(600, y, v, 13, INK, weight="600", extra=' text-anchor="end"')
+        # 数值右对齐到卡片右 padding（W-28），与轨道尽头（590）拉开干净间距
+        s += txt(W - 28, y, v, 13, INK, weight="600", extra=' text-anchor="end"')
     y += 30
     s += txt(28, y, "languages", 12, GREEN)
     s += txt(150, y, "Python · C · Go · TypeScript", 11, DIM)
