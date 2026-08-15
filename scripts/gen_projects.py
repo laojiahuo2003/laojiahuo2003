@@ -19,19 +19,19 @@ PROJECTS = [
 ]
 
 THEMES = {
-    "": {   # 浅色
-        "BG1": "#FAFDFA", "BG2": "#F0F8F0", "BORDER": "#D5E8D5",
-        "GREEN": "#1A7F37", "INK": "#1F2328", "DIM": "#4C7C54", "DIMMER": "#7C9080",
-        "DASH": "#D5E8D5",
+    "": {   # 浅色（GitHub 日间）
+        "BG1": "#ffffff", "BG2": "#f6f8fa", "BORDER": "#d0d7de",
+        "GREEN": "#1f883d", "INK": "#1F2328", "DIM": "#656d76", "DIMMER": "#8c959f",
+        "DASH": "#eaeef2",
     },
-    "-dark": {   # 深色
-        "BG1": "#0C150C", "BG2": "#050A05", "BORDER": "#1E2B1E",
-        "GREEN": "#3FB950", "INK": "#E6EDF3", "DIM": "#A5D6A7", "DIMMER": "#5A7A5A",
-        "DASH": "#1A2A1A",
+    "-dark": {   # 深色（GitHub 夜间）
+        "BG1": "#0d1117", "BG2": "#0d1117", "BORDER": "#30363d",
+        "GREEN": "#3fb950", "INK": "#f0f6fc", "DIM": "#8b949e", "DIMMER": "#6e7681",
+        "DASH": "#21262d",
     },
 }
 
-MONO = "Menlo, Consolas, 'Courier New', monospace"
+FONT = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
 
@@ -39,7 +39,7 @@ ASSETS = os.path.join(HERE, "..", "assets")
 def txt(x, y, s, size, fill, weight=None, anchor=None):
     w = f' font-weight="{weight}"' if weight else ""
     a = f' text-anchor="{anchor}"' if anchor else ""
-    return (f'<text x="{x}" y="{y}" font-family="{MONO}" font-size="{size}" '
+    return (f'<text x="{x}" y="{y}" font-family="{FONT}" font-size="{size}" '
             f'fill="{fill}"{w}{a}>{s}</text>\n')
 
 
@@ -50,12 +50,12 @@ def build(T):
         '<style>@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}</style>\n'
         f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{T["BG1"]}"/><stop offset="1" stop-color="{T["BG2"]}"/></linearGradient></defs>\n'
-        f'<rect width="{W}" height="{h}" rx="14" fill="url(#bg)" stroke="{T["BORDER"]}"/>\n'
+        f'<rect width="{W}" height="{h}" rx="8" fill="url(#bg)" stroke="{T["BORDER"]}"/>\n'
     )
     for i, (name, desc, badge) in enumerate(PROJECTS):
         y = PAD_TOP + ROW_H * i + ROW_H // 2 + 6
         s += f'<g style="animation:fadein .6s ease {0.1 + i * 0.15}s backwards">\n'
-        s += txt(28, y, "▸", 13, T["GREEN"])
+        s += f'<circle cx="34" cy="{y - 4}" r="3" fill="{T["GREEN"]}" opacity=".8"/>\n'
         s += txt(48, y, name, 14, T["INK"], weight="700")
         s += txt(190, y, desc, 11, T["DIM"])
         s += txt(W - 28, y, badge, 11, T["GREEN"], anchor="end")

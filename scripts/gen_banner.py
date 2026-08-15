@@ -10,15 +10,15 @@ import random
 W, H = 920, 300
 
 THEMES = {
-    "": {  # 浅色（GitHub 日间模式）
-        "BG": "#FBFDFB", "INK": "#1F2328", "DIM": "#57606A",
-        "ACC": "#1A7F37", "ACC2": "#2DA44E", "STROKE": "#D8E8D8",
-        "DOT_OPS": [0.14, 0.20, 0.28, 0.36], "ORB": ".14",
+    "": {  # 浅色（GitHub 日间）
+        "BG": "#ffffff", "INK": "#1F2328", "DIM": "#656d76",
+        "ACC": "#1f883d", "ACC2": "#2DA44E", "STROKE": "#d0d7de",
+        "DOT_OPS": [0.10, 0.16, 0.22, 0.30], "ORB": ".10",
     },
-    "-dark": {  # 深色（GitHub 夜间模式）
-        "BG": "#0B0E13", "INK": "#E6EDF3", "DIM": "#8B949E",
-        "ACC": "#3FB950", "ACC2": "#2EA043", "STROKE": "#1C2430",
-        "DOT_OPS": [0.05, 0.08, 0.10, 0.14], "ORB": ".22",
+    "-dark": {  # 深色（GitHub 夜间）
+        "BG": "#0d1117", "INK": "#f0f6fc", "DIM": "#8b949e",
+        "ACC": "#3fb950", "ACC2": "#2ea043", "STROKE": "#30363d",
+        "DOT_OPS": [0.05, 0.08, 0.12, 0.16], "ORB": ".16",
     },
 }
 
@@ -59,7 +59,7 @@ def build(T):
   </radialGradient>
 </defs>
 
-<rect width="{W}" height="{H}" rx="18" fill="{BG}" stroke="{T['STROKE']}"/>
+<rect width="{W}" height="{H}" rx="8" fill="{BG}" stroke="{T['STROKE']}"/>
 <g>{dots_svg}</g>
 
 <!-- 呼吸光晕（右上方） -->
@@ -75,12 +75,12 @@ def build(T):
       font-size="15" font-weight="500" fill="{DIM}">老家伙 · 杭州 · UTC+08:00</text>
 
 <!-- 方向标签 -->
-<text x="80" y="196" font-family="Menlo, Consolas, monospace"
+<text x="80" y="196" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
       font-size="17" font-weight="500" letter-spacing="1" fill="{ACC}">AI Infra · LLM · 具身智能</text>
 
 <!-- 底部流动细线 -->
 <path class="line" d="M 56 246 H {W-56}" stroke="url(#edge)" stroke-width="1.5" fill="none"/>
-<text x="{W-56}" y="236" text-anchor="end" font-family="Menlo, Consolas, monospace"
+<text x="{W-56}" y="236" text-anchor="end" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
       font-size="11" fill="{DIM}" letter-spacing="2">TRAIN · SERVE · EMBODY</text>
 </svg>'''
 

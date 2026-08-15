@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-生成主页三张实时卡片 SVG（绿黑终端风，内嵌 CSS 动画）：
+生成主页三张实时卡片 SVG（GitHub 原生简洁风，内嵌 CSS 动画）：
   assets/journey.svg  足迹条（加入年份 / 最近活动 / streak）
   assets/picks.svg    每日精选（Top5 + 今日扫描 + 语言分布）
   assets/stats.svg    统计 neofetch（stars/commits/repos/followers）
@@ -23,24 +23,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
 REPORT_REPO = "https://github.com/laojiahuo2003/github-daily-report.git"
 
-MONO = "Menlo, Consolas, 'Courier New', monospace"
-# 颜色常量由 PALETTES 在 main() 中按主题注入
+FONT = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
+# 颜色常量由 PALETTES 在 main() 中按主题注入（GitHub Primer 官方色）
 INK = TRACK = DIV = PILL = DDOT = DASH = ""
 BG1 = BG2 = BORDER = ""
 GREEN = LIGHT = DIM = DIMMER = ""
 
 PALETTES = {
-    "": {   # 浅色（默认）
-        "BG1": "#FAFDFA", "BG2": "#F0F8F0", "BORDER": "#D5E8D5",
-        "GREEN": "#1A7F37", "LIGHT": "#1F2328", "DIM": "#4C7C54", "DIMMER": "#7C9080",
-        "INK": "#1F2328", "TRACK": "#E0EDE0", "DIV": "#CBE2CB", "PILL": "#BFDDBF",
-        "DDOT": "#A8C8A8", "DASH": "#D5E8D5",
+    "": {   # 浅色（GitHub 日间）
+        "BG1": "#ffffff", "BG2": "#f6f8fa", "BORDER": "#d0d7de",
+        "GREEN": "#1f883d", "LIGHT": "#1F2328", "DIM": "#656d76", "DIMMER": "#8c959f",
+        "INK": "#1F2328", "TRACK": "#eaeef2", "DIV": "#d8dee4", "PILL": "#afb8c1",
+        "DDOT": "#afb8c1", "DASH": "#eaeef2",
     },
-    "-dark": {   # 深色（GitHub 夜间模式）
-        "BG1": "#0C150C", "BG2": "#050A05", "BORDER": "#1E2B1E",
-        "GREEN": "#3FB950", "LIGHT": "#A5D6A7", "DIM": "#7DBB7D", "DIMMER": "#5A7A5A",
-        "INK": "#E6EDF3", "TRACK": "#12210F", "DIV": "#1E3A1E", "PILL": "#234923",
-        "DDOT": "#2A4A2A", "DASH": "#1A2A1A",
+    "-dark": {   # 深色（GitHub 夜间）
+        "BG1": "#0d1117", "BG2": "#0d1117", "BORDER": "#30363d",
+        "GREEN": "#3fb950", "LIGHT": "#f0f6fc", "DIM": "#8b949e", "DIMMER": "#6e7681",
+        "INK": "#f0f6fc", "TRACK": "#21262d", "DIV": "#30363d", "PILL": "#3d444d",
+        "DDOT": "#3d444d", "DASH": "#21262d",
     },
 }
 
@@ -235,27 +235,21 @@ def svg_open(w, h, label):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{esc(label)}">\n'
         '<style>\n'
-        "@keyframes breathe{0%,100%{opacity:.4}50%{opacity:.9}}\n"
         "@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}\n"
-        "@keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}\n"
         "@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n"
         "@keyframes grow{from{width:0}}\n"
         "@keyframes ringdraw{from{stroke-dashoffset:138}}\n"
-        "@keyframes flick{0%,100%{transform:scale(1)}30%{transform:scale(1.15)}60%{transform:scale(.95)}}\n"
-        "@keyframes scan{0%{opacity:.06}100%{opacity:.06}}\n"
-        "@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}\n"
         ".pulse{animation:pulse 2s ease infinite}\n"
-        ".flick{animation:flick 1.8s ease-in-out infinite;transform-origin:center}\n"
         "</style>\n"
         f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG1}"/><stop offset="1" stop-color="{BG2}"/></linearGradient></defs>\n'
-        f'<rect width="{w}" height="{h}" rx="14" fill="url(#bg)" stroke="{BORDER}"/>\n'
+        f'<rect width="{w}" height="{h}" rx="8" fill="url(#bg)" stroke="{BORDER}"/>\n'
     )
 
 
-def txt(x, y, s, size=12, fill=None, mono=True, weight=None, extra=""):
+def txt(x, y, s, size=12, fill=None, weight=None, extra=""):
     fill = LIGHT if fill is None else fill
-    fam = MONO if mono else "-apple-system,'Segoe UI','PingFang SC',sans-serif"
+    fam = FONT
     wattr = f' font-weight="{weight}"' if weight else ""
     return (f'<text x="{x}" y="{y}" font-family="{fam}" font-size="{size}" '
             f'fill="{fill}"{wattr}{extra}>{esc(s)}</text>\n')
@@ -305,7 +299,7 @@ def build_journey(user, events, contrib):
     s += txt(598, 34, "STREAK", 10, DIM)
     st = contrib["streak"]
     if st is not None:
-        s += f'<text x="598" y="72" font-size="24" class="flick">🔥</text>\n'
+        s += f'<text x="598" y="72" font-size="24">🔥</text>\n'
         s += txt(634, 70, f"{st} 天", 22, LIGHT, weight="700")
         if contrib["longest"]:
             s += txt(598, 92, f"连续贡献 · 最长 {contrib['longest']} 天", 9, DIMMER)
@@ -321,14 +315,11 @@ def build_picks(rep):
     W, H = 744, 316
     s = svg_open(W, H, "每日精选")
     # 头部
-    for i, (h, d) in enumerate([(8, 0), (14, -.3), (6, -.6), (12, -.15), (9, -.45)]):
-        s += (f'<rect x="{28 + i*6}" y="34" width="3" height="{h}" rx="1" fill="{GREEN}" '
-              f'style="transform-origin:{29.5 + i*6}px 38px;animation:eq 1.2s ease {d}s infinite"/>\n')
-    s += txt(66, 44, "GitHub 趋势雷达", 14, LIGHT, weight="600")
+    s += txt(28, 44, "GitHub 趋势雷达", 15, LIGHT, weight="600")
     s += f'<rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="{GREEN}"/>\n'
     s += f'<circle cx="228" cy="38" r="2.5" fill="{GREEN}" class="pulse"/>\n'
     s += txt(235, 42, "LIVE", 9, GREEN)
-    s += txt(W - 28, 42, f"{rep['date']} 09:36", 10, DIM, extra=' text-anchor="end"')
+    s += txt(W - 28, 42, rep['date'], 10, DIM, extra=' text-anchor="end"')
     # 左列 Top5
     y = 78
     for i, (name, url, stars, lang) in enumerate(rep["top"]):
@@ -374,9 +365,9 @@ def build_picks(rep):
 
 def build_stats(user, contrib, stars):
     W, H = 744, 236
-    s = svg_open(W, H, "统计 neofetch")
-    s += txt(28, 44, f"~/{USER} $ neofetch --stats", 13, GREEN)
-    s += f'<rect x="288" y="34" width="8" height="12" fill="{GREEN}" style="animation:blink 1.1s steps(1) infinite"/>\n'
+    s = svg_open(W, H, "统计")
+    s += txt(28, 44, "GitHub 统计", 15, LIGHT, weight="600")
+    s += txt(W - 28, 42, f"@{USER}", 11, DIMMER, extra=' text-anchor="end"')
 
     rows = [
         ("stars", "?" if stars is None else str(stars), 0.38),
@@ -387,11 +378,11 @@ def build_stats(user, contrib, stars):
     y = 72
     for i, (k, v, frac) in enumerate(rows):
         y += 26
-        s += txt(28, y, k, 12, GREEN)
+        s += txt(28, y, k, 12, DIM)
         s += f'<rect x="150" y="{y-10}" width="440" height="8" rx="4" fill="{TRACK}"/>\n'
         s += (f'<rect x="150" y="{y-10}" width="{440*frac:.0f}" height="8" rx="4" fill="{GREEN}" '
               f'style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) {i*0.15}s backwards"/>\n')
-        s += txt(600, y, v, 12, DIM, extra=' text-anchor="end"')
+        s += txt(600, y, v, 13, INK, weight="600", extra=' text-anchor="end"')
     y += 30
     s += txt(28, y, "languages", 12, GREEN)
     s += txt(150, y, "Python · C · Go · TypeScript", 11, DIM)
