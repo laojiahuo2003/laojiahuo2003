@@ -6,8 +6,6 @@
 @keyframes ringdraw{from{stroke-dashoffset:138}}
 .pulse{animation:pulse 2s ease infinite}
 </style>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
-<rect width="744" height="186" rx="8" fill="url(#bg)" stroke="#30363d"/>
 <circle cx="62" cy="62" r="22" fill="none" stroke="#21262d" stroke-width="5"/>
 <circle cx="62" cy="62" r="22" fill="none" stroke="#3fb950" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="52" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
 <text x="62" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">5th</text>

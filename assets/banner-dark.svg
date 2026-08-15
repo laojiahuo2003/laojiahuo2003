@@ -18,7 +18,6 @@
   </radialGradient>
 </defs>
 
-<rect width="920" height="300" rx="8" fill="#0d1117" stroke="#30363d"/>
 <g><circle cx="26" cy="21" r="1" fill="#f0f6fc" opacity="0.12"/>
   <circle cx="22" cy="70" r="1" fill="#f0f6fc" opacity="0.05"/>
   <circle cx="26" cy="122" r="1" fill="#f0f6fc" opacity="0.16"/>

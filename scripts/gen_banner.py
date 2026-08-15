@@ -11,13 +11,13 @@ W, H = 920, 300
 
 THEMES = {
     "": {  # 浅色（GitHub 日间）
-        "BG": "#ffffff", "INK": "#1F2328", "DIM": "#656d76",
-        "ACC": "#1f883d", "ACC2": "#2DA44E", "STROKE": "#d0d7de",
+        "INK": "#1F2328", "DIM": "#656d76",
+        "ACC": "#1f883d", "ACC2": "#2DA44E",
         "DOT_OPS": [0.10, 0.16, 0.22, 0.30], "ORB": ".10",
     },
     "-dark": {  # 深色（GitHub 夜间）
-        "BG": "#0d1117", "INK": "#f0f6fc", "DIM": "#8b949e",
-        "ACC": "#3fb950", "ACC2": "#2ea043", "STROKE": "#30363d",
+        "INK": "#f0f6fc", "DIM": "#8b949e",
+        "ACC": "#3fb950", "ACC2": "#2ea043",
         "DOT_OPS": [0.05, 0.08, 0.12, 0.16], "ORB": ".16",
     },
 }
@@ -27,7 +27,7 @@ ASSETS = os.path.join(HERE, "..", "assets")
 
 
 def build(T):
-    BG, INK, DIM, ACC = T["BG"], T["INK"], T["DIM"], T["ACC"]
+    INK, DIM, ACC = T["INK"], T["DIM"], T["ACC"]
 
     dots = []
     random.seed(42)
@@ -59,7 +59,6 @@ def build(T):
   </radialGradient>
 </defs>
 
-<rect width="{W}" height="{H}" rx="8" fill="{BG}" stroke="{T['STROKE']}"/>
 <g>{dots_svg}</g>
 
 <!-- 呼吸光晕（右上方） -->

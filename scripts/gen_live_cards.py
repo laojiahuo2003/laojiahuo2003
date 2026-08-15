@@ -24,20 +24,17 @@ ASSETS = os.path.join(HERE, "..", "assets")
 REPORT_REPO = "https://github.com/laojiahuo2003/github-daily-report.git"
 
 FONT = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
-# 颜色常量由 PALETTES 在 main() 中按主题注入（GitHub Primer 官方色）
+# 颜色常量由 PALETTES 在 main() 中按主题注入（GitHub Primer 官方色，透明背景）
 INK = TRACK = DIV = PILL = DDOT = DASH = ""
-BG1 = BG2 = BORDER = ""
 GREEN = LIGHT = DIM = DIMMER = ""
 
 PALETTES = {
     "": {   # 浅色（GitHub 日间）
-        "BG1": "#ffffff", "BG2": "#f6f8fa", "BORDER": "#d0d7de",
         "GREEN": "#1f883d", "LIGHT": "#1F2328", "DIM": "#656d76", "DIMMER": "#8c959f",
         "INK": "#1F2328", "TRACK": "#eaeef2", "DIV": "#d8dee4", "PILL": "#afb8c1",
         "DDOT": "#afb8c1", "DASH": "#eaeef2",
     },
     "-dark": {   # 深色（GitHub 夜间）
-        "BG1": "#0d1117", "BG2": "#0d1117", "BORDER": "#30363d",
         "GREEN": "#3fb950", "LIGHT": "#f0f6fc", "DIM": "#8b949e", "DIMMER": "#6e7681",
         "INK": "#f0f6fc", "TRACK": "#21262d", "DIV": "#30363d", "PILL": "#3d444d",
         "DDOT": "#3d444d", "DASH": "#21262d",
@@ -241,9 +238,6 @@ def svg_open(w, h, label):
         "@keyframes ringdraw{from{stroke-dashoffset:138}}\n"
         ".pulse{animation:pulse 2s ease infinite}\n"
         "</style>\n"
-        f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="{BG1}"/><stop offset="1" stop-color="{BG2}"/></linearGradient></defs>\n'
-        f'<rect width="{w}" height="{h}" rx="8" fill="url(#bg)" stroke="{BORDER}"/>\n'
     )
 
 

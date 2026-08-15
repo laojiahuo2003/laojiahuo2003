@@ -25,12 +25,10 @@ SANS = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
 
 PALETTES = {
     "": {   # 浅色（GitHub 日间）
-        "BG": "#ffffff", "BORDER": "#d0d7de",
         "ACC": "#1f883d", "INK": "#1F2328", "DIM": "#656d76", "DIMMER": "#8c959f",
         "TRACK": "#eaeef2", "DIV": "#d8dee4",
     },
     "-dark": {   # 深色（GitHub 夜间）
-        "BG": "#0d1117", "BORDER": "#30363d",
         "ACC": "#3fb950", "INK": "#f0f6fc", "DIM": "#8b949e", "DIMMER": "#6e7681",
         "TRACK": "#21262d", "DIV": "#30363d",
     },
@@ -73,7 +71,6 @@ def fetch_views():
 
 
 def build(pal, total, uniques, days):
-    bg, border = pal["BG"], pal["BORDER"]
     acc, ink, dim, dimmer = pal["ACC"], pal["INK"], pal["DIM"], pal["DIMMER"]
     track, div = pal["TRACK"], pal["DIV"]
 
@@ -82,8 +79,7 @@ def build(pal, total, uniques, days):
           "@keyframes rise{from{transform:scaleY(0)}}\n"]
     b = []
 
-    # 卡片：白底净卡 + 细边框（GitHub 卡片语言）
-    b.append(f'<rect width="{W}" height="{H}" rx="8" fill="{bg}" stroke="{border}"/>\n')
+    # 无外框：透明背景，直接坐在 GitHub 页面底色上（与贪吃蛇一致）
 
     # 头部：LIVE 脉冲点 + 标题 + 右侧范围
     b.append(f'<circle cx="28" cy="{Y_HEAD - 4}" r="3" fill="{acc}" '

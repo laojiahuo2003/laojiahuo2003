@@ -20,12 +20,10 @@ PROJECTS = [
 
 THEMES = {
     "": {   # 浅色（GitHub 日间）
-        "BG1": "#ffffff", "BG2": "#f6f8fa", "BORDER": "#d0d7de",
         "GREEN": "#1f883d", "INK": "#1F2328", "DIM": "#656d76", "DIMMER": "#8c959f",
         "DASH": "#eaeef2",
     },
     "-dark": {   # 深色（GitHub 夜间）
-        "BG1": "#0d1117", "BG2": "#0d1117", "BORDER": "#30363d",
         "GREEN": "#3fb950", "INK": "#f0f6fc", "DIM": "#8b949e", "DIMMER": "#6e7681",
         "DASH": "#21262d",
     },
@@ -48,9 +46,6 @@ def build(T):
     s = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" role="img" aria-label="项目精选">\n'
         '<style>@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}</style>\n'
-        f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="{T["BG1"]}"/><stop offset="1" stop-color="{T["BG2"]}"/></linearGradient></defs>\n'
-        f'<rect width="{W}" height="{h}" rx="8" fill="url(#bg)" stroke="{T["BORDER"]}"/>\n'
     )
     for i, (name, desc, badge) in enumerate(PROJECTS):
         y = PAD_TOP + ROW_H * i + ROW_H // 2 + 6

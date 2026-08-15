@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="744" height="268" viewBox="0 0 744 268" role="img" aria-label="项目精选">
 <style>@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}</style>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
-<rect width="744" height="268" rx="8" fill="url(#bg)" stroke="#30363d"/>
 <g style="animation:fadein .6s ease 0.1s backwards">
 <circle cx="34" cy="57" r="3" fill="#3fb950" opacity=".8"/>
 <text x="48" y="61" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#f0f6fc" font-weight="700">bird-OS</text>

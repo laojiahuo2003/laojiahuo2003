@@ -6,8 +6,6 @@
 @keyframes ringdraw{from{stroke-dashoffset:138}}
 .pulse{animation:pulse 2s ease infinite}
 </style>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f8fa"/></linearGradient></defs>
-<rect width="744" height="316" rx="8" fill="url(#bg)" stroke="#d0d7de"/>
 <text x="28" y="44" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#1F2328" font-weight="600">GitHub 趋势雷达</text>
 <rect x="216" y="30" width="46" height="16" rx="8" fill="none" stroke="#1f883d"/>
 <circle cx="228" cy="38" r="2.5" fill="#1f883d" class="pulse"/>
