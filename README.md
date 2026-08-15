@@ -16,6 +16,14 @@
 
 <p align="center">
   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg">
+    <img alt="杭州实时天气" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/weather.svg" width="80%" />
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey.svg">
     <img alt="足迹：加入年份 · 最近活动 · 连续贡献" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/journey.svg" width="100%" />
@@ -56,6 +64,16 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/stats-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/stats.svg">
     <img alt="统计 neofetch" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/stats.svg" width="100%" />
+  </picture>
+</p>
+
+### 🕐 作息分析
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/clock-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/clock.svg">
+    <img alt="作息分析：几点在写代码" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/clock.svg" width="100%" />
   </picture>
 </p>
 
