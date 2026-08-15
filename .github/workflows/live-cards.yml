@@ -4,7 +4,7 @@ name: 🎴 生成实时卡片
 on:
   push:
     branches: [main]
-    paths: ['scripts/gen_live_cards.py', '.github/workflows/live-cards.yml']
+    paths: ['scripts/gen_live_cards.py', 'scripts/gen_visitors.py', '.github/workflows/live-cards.yml']
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
@@ -21,10 +21,12 @@ jobs:
       - name: 检出主页仓库
         uses: actions/checkout@v4
 
-      - name: 生成三张实时卡片
+      - name: 生成实时卡片（足迹 / 精选 / 统计 / 访客）
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/gen_live_cards.py
+        run: |
+          python3 scripts/gen_live_cards.py
+          python3 scripts/gen_visitors.py
 
       - name: 提交并推送
         run: |

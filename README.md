@@ -71,8 +71,14 @@
 
 ---
 
+### 👀 Visitors
+
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=laojiahuo2003&label=%E8%AE%BF%E5%AE%A2&color=1a7f37&style=flat-square" alt="访客计数" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors.svg">
+    <img alt="访客记录" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/visitors.svg" width="90%" />
+  </picture>
 </p>
 
 <p align="center">
