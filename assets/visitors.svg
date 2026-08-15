@@ -18,27 +18,11 @@
 <text x="372" y="22" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="12" fill="#4C7C54">老家伙 @ laojiahuo2003: ~/visitor.log</text>
 <circle cx="30" cy="54" r="3" fill="#1A7F37" style="animation:pulse 2s ease infinite"/>
 <text x="42" y="58" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#4C7C54">VISITOR LOG · LIVE</text>
-<text x="26" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="30" font-weight="700" fill="#1F2328" style="animation:fadein .6s ease .2s both">114</text>
-<text x="26" y="112" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#4C7C54">次浏览 · 52 位独立访客 · 近 14 天</text>
+<text x="26" y="92" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="30" font-weight="700" fill="#1F2328" style="animation:fadein .6s ease .2s both">—</text>
+<text x="26" y="112" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#4C7C54">演示数据 · 等待 CI 首刷</text>
 <text x="348" y="58" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="11" fill="#4C7C54">DAILY VIEWS</text>
 <line x1="348" y1="130" x2="718" y2="130" stroke="#CBE2CB" stroke-dasharray="2 4"/>
-<rect x="348" y="113.42857142857143" width="18" height="17" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.15s backwards"/>
-<rect x="374" y="92.71428571428571" width="18" height="37" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.2s backwards"/>
-<rect x="400" y="105.14285714285714" width="18" height="25" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.25s backwards"/>
-<rect x="426" y="96.85714285714286" width="18" height="33" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.30000000000000004s backwards"/>
-<rect x="452" y="88.57142857142857" width="18" height="41" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.35s backwards"/>
-<rect x="478" y="88.57142857142857" width="18" height="41" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.4s backwards"/>
-<rect x="504" y="72.0" width="18" height="58" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.45000000000000007s backwards"/>
-<rect x="530" y="109.28571428571428" width="18" height="21" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.5s backwards"/>
-<rect x="556" y="113.42857142857143" width="18" height="17" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.55s backwards"/>
-<rect x="582" y="80.28571428571429" width="18" height="50" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.6s backwards"/>
-<rect x="608" y="92.71428571428571" width="18" height="37" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.65s backwards"/>
-<rect x="634" y="96.85714285714286" width="18" height="33" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.7000000000000001s backwards"/>
-<rect x="660" y="84.42857142857143" width="18" height="46" rx="3" fill="#1A7F37" opacity="0.55" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.7500000000000001s backwards"/>
-<rect x="686" y="113.42857142857143" width="18" height="17" rx="3" fill="#1A7F37" opacity="1.0" style="transform-box:fill-box;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) 0.8s backwards"/>
-<text x="695.0" y="107.42857142857143" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#1A7F37">今</text>
-<text x="348" y="144" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">08-01T00:00:00+00:00</text>
-<text x="718" y="144" text-anchor="end" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="9" fill="#7C9080">今天</text>
+<text x="388" y="100" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#7C9080">等待数据 …</text>
 <line x1="16" y1="138" x2="728" y2="138" stroke="#CBE2CB" stroke-dasharray="2 4"/>
 <text x="26" y="152" font-family="Menlo, Consolas, 'Courier New', monospace" font-size="10" fill="#4C7C54">▸ 每一次到访都被记录 · 感谢路过，欢迎常来 ✨</text>
 <rect x="604" y="143" width="7" height="10" fill="#1A7F37" style="animation:blink 1.1s steps(1) infinite"/>
