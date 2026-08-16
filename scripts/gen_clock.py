@@ -34,7 +34,7 @@ PALETTES = {
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
 OFFLINE = os.environ.get("LIVE_OFFLINE") == "1"
 
-W, H = 744, 210
+W, H = 744, 236
 CX, CY, R, SW = 116, 122, 54, 12       # 极坐标钟几何（钟心下移，刻度避开头部行）
 GAP = 2.4                              # 扇区间留隙（度）
 LR = R + SW / 2 + 13                   # 小时刻度标签半径
