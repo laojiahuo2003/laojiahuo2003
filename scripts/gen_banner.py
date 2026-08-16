@@ -39,7 +39,7 @@ def build(T):
             dots.append(f'<circle cx="{gx+jx}" cy="{gy+jy}" r="{r}" fill="{INK}" opacity="{o}"/>')
     dots_svg = "\n  ".join(dots)
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Embodied Intelligence">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Agent, Embodied Intelligence">
 <style>
   @keyframes breathe {{ 0%,100% {{ opacity:.32 }} 50% {{ opacity:.65 }} }}
   .glow   {{ animation: breathe 7s ease-in-out infinite }}
@@ -75,7 +75,7 @@ def build(T):
 
 <!-- 方向标签 -->
 <text x="80" y="196" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
-      font-size="17" font-weight="500" letter-spacing="1" fill="{ACC}">AI Infra · LLM · 具身智能</text>
+      font-size="17" font-weight="500" letter-spacing="1" fill="{ACC}">AI Infra · LLM · Agent · 具身智能</text>
 
 <!-- 底部流动细线 -->
 <path class="line" d="M 56 246 H {W-56}" stroke="url(#edge)" stroke-width="1.5" fill="none"/>

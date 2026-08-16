@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Embodied Intelligence">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-label="Jiahuo Lao - AI Infra, LLM, Agent, Embodied Intelligence">
 <style>
   @keyframes breathe { 0%,100% { opacity:.32 } 50% { opacity:.65 } }
   .glow   { animation: breathe 7s ease-in-out infinite }
@@ -147,7 +147,7 @@
 
 <!-- 方向标签 -->
 <text x="80" y="196" font-family="-apple-system, 'Segoe UI', 'PingFang SC', sans-serif"
-      font-size="17" font-weight="500" letter-spacing="1" fill="#1f883d">AI Infra · LLM · 具身智能</text>
+      font-size="17" font-weight="500" letter-spacing="1" fill="#1f883d">AI Infra · LLM · Agent · 具身智能</text>
 
 <!-- 底部流动细线 -->
 <path class="line" d="M 56 246 H 864" stroke="url(#edge)" stroke-width="1.5" fill="none"/>

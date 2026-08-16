@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/banner-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/banner.svg">
-    <img alt="Jiahuo Lao — AI Infra · LLM · 具身智能" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/banner.svg" width="100%" />
+    <img alt="Jiahuo Lao — AI Infra · LLM · Agent · 具身智能" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/banner.svg" width="100%" />
   </picture>
 </p>
 
