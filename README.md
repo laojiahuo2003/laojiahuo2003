@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/laojiahuo2003"><sub>🏠 GitHub 主页 · 仓库与联系方式</sub></a>
+  <a href="https://laojiahuo2003.github.io"><sub>📖 我的博客</sub></a>
 </p>
 
 <p align="center">

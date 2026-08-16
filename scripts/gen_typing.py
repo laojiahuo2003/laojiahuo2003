@@ -30,7 +30,7 @@ THEMES = {
 # 循环展示的句子
 PHRASES = [
     "在杭州折腾 AI Infra 与 LLM",
-    "具身智能爱好者 · bird-OS 孵化中",
+    "具身智能爱好者 · 持续探索",
     "每天刷一遍 GitHub 趋势",
 ]
 
