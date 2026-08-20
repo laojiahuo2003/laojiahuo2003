@@ -15,7 +15,7 @@
 <text x="28" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#656d76">commits</text>
 <rect x="150" y="114" width="440" height="8" rx="4" fill="#eaeef2"/>
 <rect x="150" y="114" width="378" height="8" rx="4" fill="#1f883d" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.15s backwards"/>
-<text x="716" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328" font-weight="600" text-anchor="end">113</text>
+<text x="716" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328" font-weight="600" text-anchor="end">123</text>
 <text x="28" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#656d76">repos</text>
 <rect x="150" y="140" width="440" height="8" rx="4" fill="#eaeef2"/>
 <rect x="150" y="140" width="97" height="8" rx="4" fill="#1f883d" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.3s backwards"/>
