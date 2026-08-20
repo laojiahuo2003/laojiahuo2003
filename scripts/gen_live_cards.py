@@ -6,7 +6,7 @@
   assets/picks.svg    每日精选（Top5 + 今日扫描 + 语言分布）
   assets/stats.svg    统计 neofetch（stars/commits/repos/followers）
 
-数据源：GitHub REST/GraphQL API + 博客仓库的结构化 feed.json
+数据源：GitHub REST/GraphQL API + 日报仓库（github-daily-report）的结构化 feed.json
 环境变量 GH_TOKEN 可选（Actions 中传入以提升 API 限额）
 LIVE_OFFLINE=1 时用演示数据，仅用于本地排版调试
 """
@@ -19,8 +19,8 @@ from datetime import datetime, timezone
 USER = "laojiahuo2003"
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
-# 日报已迁移进博客仓库；feed.json 由 daily/ 生成器维护，取最新一期
-FEED_URL = "https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003.github.io/main/src/data/feed.json"
+# 日报仓库与博客仓库是两套独立并行的系统；趋势雷达读日报仓库的 feed.json（根目录，生成器维护）
+FEED_URL = "https://raw.githubusercontent.com/laojiahuo2003/github-daily-report/main/feed.json"
 
 FONT = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
 # 颜色常量由 PALETTES 在 main() 中按主题注入（GitHub Primer 官方色，透明背景）
@@ -394,7 +394,7 @@ def build_picks(rep):
         s += txt(XR + 198, y + 4, f"{pct:.0f}%", 9, DIMMER)
     s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="{PILL}"/>\n'
     s += txt(XR + 108, 235, "📄 查看完整日报 →", 11, GREEN, extra=' text-anchor="middle"')
-    s += txt(W - 28, H - 16, "POWERED BY laojiahuo2003.github.io/daily", 9, DIMMER, extra=' text-anchor="end"')
+    s += txt(W - 28, H - 16, "POWERED BY github-daily-report", 9, DIMMER, extra=' text-anchor="end"')
     s += "</svg>\n"
     return s
 

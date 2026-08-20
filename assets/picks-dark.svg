@@ -10,11 +10,11 @@
 <rect x="151" y="30" width="46" height="16" rx="8" fill="none" stroke="#3fb950"/>
 <circle cx="163" cy="38" r="2.5" fill="#3fb950" class="pulse"/>
 <text x="169.75" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#3fb950">LIVE</text>
-<text x="716" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8b949e" text-anchor="end">2026-08-20 10:31</text>
+<text x="716" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8b949e" text-anchor="end">2026-08-20 10:23</text>
 <g style="animation:fadein .6s ease 0.1s backwards">
 <text x="28" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#3fb950">01</text>
 <text x="56" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#f0f6fc">harry0703/MoneyPrinterTurbo</text>
-<text x="376" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#3fb950" text-anchor="end">▲ 112.3k</text>
+<text x="376" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#3fb950" text-anchor="end">▲ 112.2k</text>
 <rect x="388" y="101" width="52" height="17" rx="9" fill="none" stroke="#3d444d"/>
 <text x="414.0" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Python</text>
 </g>
@@ -71,5 +71,5 @@
 <text x="684" y="194" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#6e7681">21%</text>
 <rect x="486" y="216" width="216" height="30" rx="8" fill="none" stroke="#3d444d"/>
 <text x="594" y="235" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#3fb950" text-anchor="middle">📄 查看完整日报 →</text>
-<text x="716" y="300" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#6e7681" text-anchor="end">POWERED BY laojiahuo2003.github.io/daily</text>
+<text x="716" y="300" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#6e7681" text-anchor="end">POWERED BY github-daily-report</text>
 </svg>

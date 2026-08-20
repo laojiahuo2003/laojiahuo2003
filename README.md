@@ -33,7 +33,7 @@
 </p>
 
 <p align="center">
-  <a href="https://laojiahuo2003.github.io/daily/" aria-label="查看完整日报">
+  <a href="https://github.com/laojiahuo2003/github-daily-report" aria-label="查看完整日报">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg">
