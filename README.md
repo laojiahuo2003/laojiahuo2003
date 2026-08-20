@@ -7,7 +7,13 @@
 </p>
 
 <p align="center">
-  <a href="https://laojiahuo2003.github.io"><sub>📖 我的博客</sub></a>
+  <a href="https://laojiahuo2003.github.io" aria-label="手记 Blog">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/blog-link-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/blog-link.svg">
+      <img alt="手记 Blog — laojiahuo2003.github.io" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/blog-link.svg" width="480" />
+    </picture>
+  </a>
 </p>
 
 <p align="center">
