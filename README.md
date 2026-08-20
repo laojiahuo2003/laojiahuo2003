@@ -33,11 +33,13 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg">
-    <img alt="每日精选：GitHub 趋势雷达" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg" width="100%" />
-  </picture>
+  <a href="https://laojiahuo2003.github.io/daily/" aria-label="查看完整日报">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg">
+      <img alt="每日精选：GitHub 趋势雷达" src="https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003/main/assets/picks.svg" width="100%" />
+    </picture>
+  </a>
 </p>
 
 <p align="center">

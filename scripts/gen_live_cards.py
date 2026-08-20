@@ -6,14 +6,12 @@
   assets/picks.svg    每日精选（Top5 + 今日扫描 + 语言分布）
   assets/stats.svg    统计 neofetch（stars/commits/repos/followers）
 
-数据源：GitHub REST/GraphQL API + github-daily-report 仓库
+数据源：GitHub REST/GraphQL API + 博客仓库的结构化 feed.json
 环境变量 GH_TOKEN 可选（Actions 中传入以提升 API 限额）
 LIVE_OFFLINE=1 时用演示数据，仅用于本地排版调试
 """
 import json
 import os
-import re
-import subprocess
 import sys
 import urllib.request
 from datetime import datetime, timezone
@@ -21,7 +19,8 @@ from datetime import datetime, timezone
 USER = "laojiahuo2003"
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
-REPORT_REPO = "https://github.com/laojiahuo2003/github-daily-report.git"
+# 日报已迁移进博客仓库；feed.json 由 daily/ 生成器维护，取最新一期
+FEED_URL = "https://raw.githubusercontent.com/laojiahuo2003/laojiahuo2003.github.io/main/src/data/feed.json"
 
 FONT = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
 # 颜色常量由 PALETTES 在 main() 中按主题注入（GitHub Primer 官方色，透明背景）
@@ -170,7 +169,7 @@ def fetch_contributions():
 
 
 def fetch_report():
-    """克隆日报仓库，返回（日期, top5 列表, 新发现数, 增长数, 语言分布 dict）"""
+    """拉取博客日报 feed.json 最新一期，返回（日期, top5 列表, 新发现数, 增长数, 语言分布 dict）"""
     if OFFLINE:
         demo = [
             ("anthropics/skills", "https://github.com/anthropics/skills", 169300, "Python"),
@@ -181,35 +180,43 @@ def fetch_report():
         ]
         return {"date": "2026-08-14 09:36", "top": demo, "new": 98, "fast": 54,
                 "langs": {"Python": 3, "HTML": 1, "Swift": 1}}
-    tmp = "/tmp/live-report"
-    subprocess.run(["rm", "-rf", tmp], check=False)
-    r = subprocess.run(["git", "clone", "--quiet", "--depth", "1", REPORT_REPO, tmp],
-                       capture_output=True, text=True)
-    if r.returncode != 0:
-        print("克隆报告仓库失败:", r.stderr, file=sys.stderr)
+    try:
+        req = urllib.request.Request(FEED_URL, headers={"User-Agent": "profile-card-gen"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            feed = json.load(r)
+    except Exception as e:
+        print("feed.json 获取失败:", e, file=sys.stderr)
         return None
-    rdir = os.path.join(tmp, "reports")
-    files = sorted(f for f in os.listdir(rdir) if f.endswith(".md"))
-    if not files:
+    reports = feed.get("reports") or []
+    if not reports:
         return None
-    content = open(os.path.join(rdir, files[-1]), encoding="utf-8").read()
-    m = re.match(r"# GitHub 每日报告 - (\S+)", content)
-    hm = re.match(r"(\d{4}-\d{2}-\d{2})_(\d{2})-(\d{2})", files[-1])
-    if hm:
-        date_str = f"{hm.group(1)} {hm.group(2)}:{hm.group(3)}"
-    else:
-        date_str = m.group(1) if m else files[-1][:10]
+    rep = reports[0]
 
-    sec = re.search(r"## ✨ 新发现项目(.*?)(?=\n## |\Z)", content, re.S)
-    entries = []
+    top = [
+        (p.get("name", ""), p.get("url") or f"https://github.com/{p.get('name', '')}",
+         int(p.get("stars") or 0), p.get("language") or "-")
+        for p in (rep.get("leaderboard") or [])[:5]
+    ]
     langs = {}
-    if sec:
-        for mm in re.finditer(r"- \*\*\[([^\]]+)\]\(([^)]+)\)\*\* ⭐(\d+)(?:[^\n]*?) `(\S+)`", sec.group(1)):
-            name, url, stars, lang = mm.group(1), mm.group(2), int(mm.group(3)), mm.group(4)
-            entries.append((name, url, stars, lang))
+    for p in (rep.get("leaderboard") or []):
+        lang = p.get("language")
+        if lang:
             langs[lang] = langs.get(lang, 0) + 1
-    fast = len(re.findall(r"^\d+\. \*\*\[", content, re.M))
-    return {"date": date_str, "top": entries[:5], "new": len(entries), "fast": fast, "langs": langs}
+
+    # 展示时间用 feed 更新时间（即最新一期的生成时刻）
+    try:
+        dt = datetime.strptime(feed.get("updated", ""), "%Y-%m-%dT%H:%M:%SZ")
+        date_str = dt.strftime("%Y-%m-%d %H:%M")
+    except ValueError:
+        date_str = rep.get("date", "")
+
+    return {
+        "date": date_str,
+        "top": top,
+        "new": len(rep.get("newly_discovered") or []),
+        "fast": len(rep.get("fast_growing") or []),
+        "langs": langs,
+    }
 
 
 def rel_time(iso):
@@ -387,7 +394,7 @@ def build_picks(rep):
         s += txt(XR + 198, y + 4, f"{pct:.0f}%", 9, DIMMER)
     s += f'<rect x="{XR}" y="216" width="216" height="30" rx="8" fill="none" stroke="{PILL}"/>\n'
     s += txt(XR + 108, 235, "📄 查看完整日报 →", 11, GREEN, extra=' text-anchor="middle"')
-    s += txt(W - 28, H - 16, "POWERED BY github-daily-report", 9, DIMMER, extra=' text-anchor="end"')
+    s += txt(W - 28, H - 16, "POWERED BY laojiahuo2003.github.io/daily", 9, DIMMER, extra=' text-anchor="end"')
     s += "</svg>\n"
     return s
 
