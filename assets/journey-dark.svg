@@ -7,7 +7,7 @@
 .pulse{animation:pulse 2s ease infinite}
 </style>
 <circle cx="62" cy="62" r="22" fill="none" stroke="#21262d" stroke-width="5"/>
-<circle cx="62" cy="62" r="22" fill="none" stroke="#3fb950" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="50" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
+<circle cx="62" cy="62" r="22" fill="none" stroke="#3fb950" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="49" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
 <text x="62" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">5th</text>
 <text x="100" y="58" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#f0f6fc" font-weight="700">2022</text>
 <text x="100" y="78" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8b949e">GITHUBING SINCE · 第 5 年</text>
