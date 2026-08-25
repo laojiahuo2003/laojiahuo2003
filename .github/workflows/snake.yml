@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# 与实时卡片 workflow 共用同一组，串行推送 main，避免互相撞车；后来的排队等，不取消先来的
+concurrency:
+  group: bot-push-main
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
