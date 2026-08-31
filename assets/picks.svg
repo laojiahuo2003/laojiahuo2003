@@ -10,11 +10,11 @@
 <rect x="151" y="30" width="46" height="16" rx="8" fill="none" stroke="#1f883d"/>
 <circle cx="163" cy="38" r="2.5" fill="#1f883d" class="pulse"/>
 <text x="169.75" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#1f883d">LIVE</text>
-<text x="716" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76" text-anchor="end">2026-08-31 06:32</text>
+<text x="716" y="42" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76" text-anchor="end">2026-08-31 17:21</text>
 <g style="animation:fadein .6s ease 0.1s backwards">
 <text x="28" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d">01</text>
 <text x="56" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">tt-a1i/archify</text>
-<text x="352" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 35.8k</text>
+<text x="352" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 37.8k</text>
 <rect x="364" y="101" width="76" height="17" rx="9" fill="none" stroke="#afb8c1"/>
 <text x="402.0" y="114" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">JavaScript</text>
 </g>
@@ -22,7 +22,7 @@
 <g style="animation:fadein .6s ease 0.25s backwards">
 <text x="28" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d">02</text>
 <text x="56" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">THU-MAIC/OpenMAIC</text>
-<text x="352" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 24.9k</text>
+<text x="352" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 26.5k</text>
 <rect x="364" y="137" width="76" height="17" rx="9" fill="none" stroke="#afb8c1"/>
 <text x="402.0" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">TypeScript</text>
 </g>
@@ -30,25 +30,25 @@
 <g style="animation:fadein .6s ease 0.4s backwards">
 <text x="28" y="186" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d">03</text>
 <text x="56" y="186" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">K-Dense-AI/scientific-agent-skills</text>
-<text x="376" y="186" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 39.8k</text>
+<text x="376" y="186" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 40.5k</text>
 <rect x="388" y="173" width="52" height="17" rx="9" fill="none" stroke="#afb8c1"/>
 <text x="414.0" y="186" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">Python</text>
 </g>
 <line x1="28" y1="198" x2="440" y2="198" stroke="#eaeef2" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.5499999999999999s backwards">
 <text x="28" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d">04</text>
-<text x="56" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">tashfeenahmed/freellmapi</text>
-<text x="352" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 23.0k</text>
+<text x="56" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">zhaoxuya520/reverse-skill</text>
+<text x="352" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 32.9k</text>
 <rect x="364" y="209" width="76" height="17" rx="9" fill="none" stroke="#afb8c1"/>
-<text x="402.0" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">TypeScript</text>
+<text x="402.0" y="222" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">PowerShell</text>
 </g>
 <line x1="28" y1="234" x2="440" y2="234" stroke="#eaeef2" stroke-dasharray="3 3"/>
 <g style="animation:fadein .6s ease 0.7s backwards">
 <text x="28" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d">05</text>
-<text x="56" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">every-app/open-seo</text>
-<text x="352" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 15.3k</text>
-<rect x="364" y="245" width="76" height="17" rx="9" fill="none" stroke="#afb8c1"/>
-<text x="402.0" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">TypeScript</text>
+<text x="56" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#1F2328">k1tbyte/Wand-Enhancer</text>
+<text x="384" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1f883d" text-anchor="end">▲ 23.2k</text>
+<rect x="396" y="245" width="44" height="17" rx="9" fill="none" stroke="#afb8c1"/>
+<text x="418.0" y="258" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76" text-anchor="middle">C#</text>
 </g>
 <line x1="458" y1="24" x2="458" y2="292" stroke="#d8dee4" stroke-dasharray="2 4"/>
 <text x="486" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76">今日扫描</text>
@@ -61,11 +61,11 @@
 <rect x="558" y="147" width="118" height="5" rx="2.5" fill="#eaeef2"/>
 <rect x="558" y="147" width="47" height="5" rx="2.5" fill="#1f883d" style="animation:grow 1.2s ease 0.2s backwards"/>
 <text x="684" y="154" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8c959f">40%</text>
-<text x="486" y="174" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#1F2328">TypeScript</text>
+<text x="486" y="174" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#1F2328">JavaScript</text>
 <rect x="558" y="167" width="118" height="5" rx="2.5" fill="#eaeef2"/>
-<rect x="558" y="167" width="39" height="5" rx="2.5" fill="#1f883d" style="animation:grow 1.2s ease 0.35s backwards"/>
-<text x="684" y="174" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8c959f">33%</text>
-<text x="486" y="194" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#1F2328">Java</text>
+<rect x="558" y="167" width="16" height="5" rx="2.5" fill="#1f883d" style="animation:grow 1.2s ease 0.35s backwards"/>
+<text x="684" y="174" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8c959f">13%</text>
+<text x="486" y="194" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#1F2328">TypeScript</text>
 <rect x="558" y="187" width="118" height="5" rx="2.5" fill="#eaeef2"/>
 <rect x="558" y="187" width="16" height="5" rx="2.5" fill="#1f883d" style="animation:grow 1.2s ease 0.5s backwards"/>
 <text x="684" y="194" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#8c959f">13%</text>
