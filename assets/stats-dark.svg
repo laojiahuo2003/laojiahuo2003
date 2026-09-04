@@ -15,11 +15,11 @@
 <text x="28" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#8b949e">commits</text>
 <rect x="150" y="114" width="440" height="8" rx="4" fill="#21262d"/>
 <rect x="150" y="114" width="378" height="8" rx="4" fill="#3fb950" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.15s backwards"/>
-<text x="716" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#f0f6fc" font-weight="600" text-anchor="end">157</text>
+<text x="716" y="124" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#f0f6fc" font-weight="600" text-anchor="end">159</text>
 <text x="28" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#8b949e">repos</text>
 <rect x="150" y="140" width="440" height="8" rx="4" fill="#21262d"/>
 <rect x="150" y="140" width="97" height="8" rx="4" fill="#3fb950" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.3s backwards"/>
-<text x="716" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#f0f6fc" font-weight="600" text-anchor="end">19</text>
+<text x="716" y="150" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#f0f6fc" font-weight="600" text-anchor="end">20</text>
 <text x="28" y="176" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="12" fill="#8b949e">followers</text>
 <rect x="150" y="166" width="440" height="8" rx="4" fill="#21262d"/>
 <rect x="150" y="166" width="62" height="8" rx="4" fill="#3fb950" style="animation:grow 1.4s cubic-bezier(.2,.8,.2,1) 0.44999999999999996s backwards"/>
