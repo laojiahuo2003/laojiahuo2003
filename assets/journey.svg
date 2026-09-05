@@ -7,22 +7,22 @@
 .pulse{animation:pulse 2s ease infinite}
 </style>
 <circle cx="62" cy="62" r="22" fill="none" stroke="#eaeef2" stroke-width="5"/>
-<circle cx="62" cy="62" r="22" fill="none" stroke="#1f883d" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="45" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
+<circle cx="62" cy="62" r="22" fill="none" stroke="#1f883d" stroke-width="5" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="44" style="animation:ringdraw 1.6s cubic-bezier(.2,.8,.2,1) backwards"/>
 <text x="62" y="66" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76" text-anchor="middle">5th</text>
 <text x="100" y="58" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#1F2328" font-weight="700">2022</text>
 <text x="100" y="78" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="9" fill="#656d76">GITHUBING SINCE · 第 5 年</text>
 <line x1="290" y1="20" x2="290" y2="166" stroke="#d8dee4" stroke-dasharray="2 4"/>
 <text x="312" y="34" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76">◉ 最近活动 · LIVE</text>
 <circle cx="318" cy="48" r="3" fill="#1f883d" class="pulse"/>
-<text x="312" y="76" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">16h</text>
+<text x="312" y="76" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">18h</text>
 <circle cx="352" cy="73" r="3" fill="#1f883d" class="pulse"/>
 <text x="364" y="76" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76">push</text>
 <text x="418" y="76" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1F2328">robonix-client</text>
-<text x="312" y="98" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">17h</text>
+<text x="312" y="98" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">19h</text>
 <circle cx="352" cy="95" r="3" fill="#afb8c1"/>
 <text x="364" y="98" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76">PR</text>
 <text x="418" y="98" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1F2328">syswonder/robonix-clie…</text>
-<text x="312" y="120" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">18h</text>
+<text x="312" y="120" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#8c959f">20h</text>
 <circle cx="352" cy="117" r="3" fill="#afb8c1"/>
 <text x="364" y="120" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="10" fill="#656d76">fork</text>
 <text x="418" y="120" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="11" fill="#1F2328">syswonder/robonix-clie…</text>
