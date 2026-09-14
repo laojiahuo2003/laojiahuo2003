@@ -146,9 +146,16 @@ def build(pal, total, uniques, days):
 def main():
     os.makedirs(ASSETS, exist_ok=True)
     total, uniques, days = fetch_views()
+    demo = total is None
     for suffix, pal in PALETTES.items():
         name = f"visitors{suffix}.svg"
-        with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
+        path = os.path.join(ASSETS, name)
+        # Traffic API 抖动/PAT 过期时不覆盖旧 SVG，避免"访客数消失"；
+        # 只有首次运行（还没有 SVG）时才落一份"—"占位
+        if demo and os.path.exists(path):
+            print(f"跳过 {name}：Traffic 数据不可用，保留现有卡片")
+            continue
+        with open(path, "w", encoding="utf-8") as f:
             f.write(build(pal, total, uniques, days))
         print(f"生成 {name}")
 

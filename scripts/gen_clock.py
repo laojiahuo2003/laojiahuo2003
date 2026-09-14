@@ -54,7 +54,7 @@ def demo_hours():
 
 
 def fetch_hours():
-    """返回 [(hour, count)×24]，北京时间；失败/离线回退演示数据"""
+    """返回 [(hour, count)×24]，北京时间；失败返回 (None, None)，main() 会跳过写入"""
     if OFFLINE:
         return demo_hours()
     counts = [0] * 24
@@ -76,10 +76,11 @@ def fetch_hours():
                 counts[t.astimezone(CST).hour] += 1
                 total += 1
     except Exception as e:
-        print("events 获取失败，使用演示数据:", e, file=sys.stderr)
-        return demo_hours()
+        print("events 获取失败，跳过刷新:", e, file=sys.stderr)
+        return None, None
     if total == 0:
-        return demo_hours()
+        # 没有活动样本时也别写空图覆盖旧数据
+        return None, None
     return counts, total
 
 
@@ -169,7 +170,18 @@ def main():
     counts, total = fetch_hours()
     for suffix, pal in PALETTES.items():
         name = f"clock{suffix}.svg"
-        with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
+        path = os.path.join(ASSETS, name)
+        if counts is None:
+            if os.path.exists(path):
+                print(f"跳过 {name}：Events 数据不可用，保留现有卡片")
+                continue
+            # 首次运行没有旧卡片可保留时，落 demo 数据占位
+            demo_c, demo_t = demo_hours()
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(build(pal, demo_c, demo_t))
+            print(f"生成 {name}（占位）")
+            continue
+        with open(path, "w", encoding="utf-8") as f:
             f.write(build(pal, counts, total))
         print(f"生成 {name}")
 

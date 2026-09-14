@@ -74,7 +74,11 @@ def graphql(query):
 def fetch_user():
     if OFFLINE:
         return {"created_at": "2020-05-01T00:00:00Z", "followers": 3, "public_repos": 16}
-    return api(f"https://api.github.com/users/{USER}")
+    try:
+        return api(f"https://api.github.com/users/{USER}")
+    except Exception as e:
+        print("user 获取失败:", e, file=sys.stderr)
+        return None
 
 
 def fetch_stars():
@@ -96,7 +100,11 @@ def fetch_events():
             {"type": "WatchEvent", "repo": "anthropics/skills", "created_at": "2026-08-14T04:00:00Z"},
             {"type": "PushEvent", "repo": "laojiahuo2003/github-daily-report", "created_at": "2026-08-13T09:00:00Z", "n": 1},
         ]
-    evs = api(f"https://api.github.com/users/{USER}/events/public?per_page=100")
+    try:
+        evs = api(f"https://api.github.com/users/{USER}/events/public?per_page=100")
+    except Exception as e:
+        print("events 获取失败:", e, file=sys.stderr)
+        return None
     out, seen = [], set()
     for e in evs:
         if e["repo"]["name"] == f"{USER}/{USER}":
@@ -427,27 +435,46 @@ def build_stats(user, contrib, stars):
     return s
 
 
+def _write_or_keep(path, builder, ok):
+    """ok=True 时用 builder() 生成并写入；ok=False 时若已有旧卡则保留，否则写占位"""
+    if ok:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(builder())
+        print(f"生成 {os.path.basename(path)}")
+        return
+    if os.path.exists(path):
+        print(f"跳过 {os.path.basename(path)}：数据不可用，保留现有卡片")
+        return
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(builder())
+    print(f"生成 {os.path.basename(path)}（占位）")
+
+
 def main():
     os.makedirs(ASSETS, exist_ok=True)
     user = fetch_user()
     events = fetch_events()
     contrib = fetch_contributions()
     rep = fetch_report()
-    if not rep:
-        rep = {"date": "—", "top": [], "new": 0, "fast": 0, "langs": {}}
-
     stars = fetch_stars()
+
+    # 首次运行时无卡片可保留，用最少的兜底数据让 build_* 不崩
+    user_fb = user or {"created_at": "2020-01-01T00:00:00Z", "followers": 0, "public_repos": 0}
+    events_fb = events if events is not None else []
+    rep_fb = rep or {"date": "—", "top": [], "new": 0, "fast": 0, "langs": {}}
+
+    journey_ok = user is not None and events is not None and contrib["streak"] is not None
+    picks_ok = rep is not None
+    stats_ok = user is not None and stars is not None and contrib["year_total"] is not None
+
     for suffix, pal in PALETTES.items():
         globals().update(pal)
-        outs = {
-            f"journey{suffix}.svg": build_journey(user, events, contrib),
-            f"stats{suffix}.svg": build_stats(user, contrib, stars),
-            f"picks{suffix}.svg": build_picks(rep),
-        }
-        for name, svg in outs.items():
-            with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
-                f.write(svg)
-            print(f"生成 {name}")
+        _write_or_keep(os.path.join(ASSETS, f"journey{suffix}.svg"),
+                       lambda: build_journey(user_fb, events_fb, contrib), journey_ok)
+        _write_or_keep(os.path.join(ASSETS, f"stats{suffix}.svg"),
+                       lambda: build_stats(user_fb, contrib, stars), stats_ok)
+        _write_or_keep(os.path.join(ASSETS, f"picks{suffix}.svg"),
+                       lambda: build_picks(rep_fb), picks_ok)
 
 
 if __name__ == "__main__":

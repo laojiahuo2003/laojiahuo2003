@@ -80,8 +80,8 @@ def fetch():
                 "rh": c["relative_humidity_2m"], "code": c["weather_code"],
                 "wind": c["wind_speed_10m"], "ts": ts}
     except Exception as e:
-        print("天气获取失败，使用演示数据:", e, file=sys.stderr)
-        return {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3, "ts": ts}
+        print("天气获取失败，跳过刷新:", e, file=sys.stderr)
+        return None
 
 
 def esc(s):
@@ -126,12 +126,26 @@ def build(pal, d):
             f'{"".join(b)}</svg>\n')
 
 
+DEMO = {"temp": 31.2, "app": 33.4, "rh": 62, "code": 1, "wind": 11.3}
+
+
 def main():
     os.makedirs(ASSETS, exist_ok=True)
     d = fetch()
     for suffix, pal in PALETTES.items():
         name = f"weather{suffix}.svg"
-        with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
+        path = os.path.join(ASSETS, name)
+        if d is None:
+            if os.path.exists(path):
+                print(f"跳过 {name}：open-meteo 不可用，保留现有卡片")
+                continue
+            ts = datetime.now(CST).strftime("%H:%M")
+            placeholder = {**DEMO, "ts": ts}
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(build(pal, placeholder))
+            print(f"生成 {name}（占位）")
+            continue
+        with open(path, "w", encoding="utf-8") as f:
             f.write(build(pal, d))
         print(f"生成 {name}")
 
