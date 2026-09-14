@@ -56,6 +56,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/*.svg
+          # 访客累计数据（GitHub Traffic 只保留 14 天，data/visitors.json 由 gen_visitors.py 持久化）
+          [ -d data ] && git add data/ || true
           git commit -m "🎴 刷新实时卡片" || echo "无变化，跳过"
           # 远端可能已被贪吃蛇等其他 workflow 推进，先 rebase 再推
           git pull --rebase

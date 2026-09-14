@@ -20,6 +20,8 @@ from datetime import datetime, timedelta, timezone
 USER = "laojiahuo2003"
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
+DATA = os.path.join(HERE, "..", "data")
+STORE = os.path.join(DATA, "visitors.json")   # 累计访客数据（GitHub Traffic 只保留 14 天，需自建持久化）
 
 SANS = "-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif"
 
@@ -47,14 +49,13 @@ def esc(s):
 
 
 def fetch_views():
-    """返回 (总浏览, 总独立访客, [(日期, views, uniques)×14])"""
+    """返回 API 原始每日数据 [(date, views, uniques), ...]，失败返回 None（不是空列表，用于区分"接口挂了"与"真的没数据"）"""
     if OFFLINE:
         import random
         rnd = random.Random(3)
         days = [(datetime(2026, 8, 1, tzinfo=timezone.utc) + timedelta(days=i))
                 for i in range(N_BARS)]
-        data = [(d.isoformat(), rnd.randint(1, 14), rnd.randint(1, 6)) for d in days]
-        return sum(v for _, v, _ in data), sum(u for _, _, u in data), data
+        return [(d.date().isoformat(), rnd.randint(1, 14), rnd.randint(1, 6)) for d in days]
     req = urllib.request.Request(
         f"https://api.github.com/repos/{USER}/{USER}/traffic/views",
         headers={"User-Agent": "visitor-card-gen", "Accept": "application/vnd.github+json",
@@ -62,15 +63,47 @@ def fetch_views():
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             d = json.load(r)
-        days = [(v["timestamp"][:10], v["count"], v["uniques"]) for v in d.get("views", [])]
-        days = days[-N_BARS:]
-        return d.get("count", 0), d.get("uniques", 0), days
+        return [(v["timestamp"][:10], int(v.get("count", 0)), int(v.get("uniques", 0)))
+                for v in d.get("views", [])]
     except Exception as e:
-        print("traffic 获取失败，使用演示数据:", e, file=sys.stderr)
-        return None, None, []
+        print("traffic 获取失败:", e, file=sys.stderr)
+        return None
 
 
-def build(pal, total, uniques, days):
+def load_store():
+    """{date: {'views': int, 'uniques': int}}，文件不存在或损坏返回空 dict"""
+    try:
+        with open(STORE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return {k: {"views": int(v["views"]), "uniques": int(v["uniques"])}
+                for k, v in data.get("days", {}).items()}
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as e:
+        if not isinstance(e, FileNotFoundError):
+            print("visitors.json 读取失败，重建:", e, file=sys.stderr)
+        return {}
+
+
+def save_store(days):
+    os.makedirs(DATA, exist_ok=True)
+    with open(STORE, "w", encoding="utf-8") as f:
+        json.dump({
+            "note": "累计访客数据。GitHub Traffic API 只保留 14 天，此文件由 CI 每小时合并入库以永久保留。",
+            "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "days": {k: days[k] for k in sorted(days)},
+        }, f, ensure_ascii=False, indent=2)
+
+
+def merge(store, api_days):
+    """对每一天取 API 与历史的 max（同一天 CI 多次跑不会回滚，14 天窗口内数据只增不减）"""
+    for date, views, uniques in api_days:
+        prev = store.get(date, {"views": 0, "uniques": 0})
+        store[date] = {"views": max(prev["views"], views),
+                       "uniques": max(prev["uniques"], uniques)}
+    return store
+
+
+def build(pal, total_views, total_uniques, recent_days, since):
+    """total_* 为累计值，recent_days 为最近 N_BARS 天 [(date, views, uniques)]，since 是最早入库日期"""
     acc, ink, dim, dimmer = pal["ACC"], pal["INK"], pal["DIM"], pal["DIMMER"]
     track, div = pal["TRACK"], pal["DIV"]
 
@@ -79,40 +112,36 @@ def build(pal, total, uniques, days):
           "@keyframes rise{from{transform:scaleY(0)}}\n"]
     b = []
 
-    # 无外框：透明背景，直接坐在 GitHub 页面底色上（与贪吃蛇一致）
-
-    # 头部：LIVE 脉冲点 + 标题 + 右侧范围
+    # 头部：LIVE 脉冲点 + 标题 + 右侧"累计自 {since}"
     b.append(f'<circle cx="28" cy="{Y_HEAD - 4}" r="3" fill="{acc}" '
              f'style="animation:pulse 2s ease infinite"/>\n')
     b.append(f'<text x="40" y="{Y_HEAD}" font-family="{SANS}" font-size="12" '
              f'font-weight="600" fill="{ink}">访客统计</text>\n')
     b.append(f'<text x="110" y="{Y_HEAD}" font-family="{SANS}" font-size="11" '
              f'fill="{dimmer}">VISITORS</text>\n')
+    range_label = f"累计自 {since}" if since else "累计"
     b.append(f'<text x="{W - 26}" y="{Y_HEAD}" text-anchor="end" font-family="{SANS}" '
-             f'font-size="11" fill="{dim}">近 14 天</text>\n')
+             f'font-size="11" fill="{dim}">{range_label}</text>\n')
 
-    # 左列：大数字 + 说明
-    demo = total is None
+    # 左列：累计总浏览大数字 + 累计独立访客说明
     b.append(f'<text x="26" y="{Y_NUM}" font-family="{SANS}" font-size="34" '
              f'font-weight="700" fill="{ink}" '
-             f'style="animation:fadein .6s ease .2s both">'
-             f'{"—" if demo else total}</text>\n')
+             f'style="animation:fadein .6s ease .2s both">{total_views}</text>\n')
     b.append(f'<text x="26" y="{Y_SUB}" font-family="{SANS}" font-size="12" fill="{dim}">'
-             f'{"演示数据 · 等待 CI 首刷" if demo else f"次浏览 · {uniques} 位独立访客"}'
-             f'</text>\n')
+             f'次浏览 · 累计 {total_uniques} 位独立访客</text>\n')
 
-    # 分隔线 + 右列：每日趋势柱状图（逐根升起，今日高亮）
+    # 分隔线 + 右列：最近 14 天趋势柱状图（今日高亮）
     b.append(f'<line x1="326" y1="24" x2="326" y2="{H - 30}" stroke="{div}"/>\n')
-    if days:
-        mx = max(v for _, v, _ in days) or 1
+    if recent_days:
+        mx = max(v for _, v, _ in recent_days) or 1
         bw, gap = 18, 8
         step = bw + gap
         chart_top = 44
         chart_h = Y_BASE - chart_top
-        for i, (d, v, _u) in enumerate(days):
+        for i, (d, v, _u) in enumerate(recent_days):
             h = max(3, v / mx * chart_h)
             x = CHART_X + i * step
-            today = i == len(days) - 1
+            today = i == len(recent_days) - 1
             b.append(f'<rect x="{x}" y="{Y_BASE - h}" width="{bw}" height="{h:.0f}" rx="3" '
                      f'fill="{acc}" opacity="{1.0 if today else 0.35}" '
                      f'style="transform-box:fill-box;transform-origin:bottom;'
@@ -123,12 +152,12 @@ def build(pal, total, uniques, days):
         b.append(f'<line x1="{CHART_X}" y1="{Y_BASE}" x2="{W - 26}" y2="{Y_BASE}" '
                  f'stroke="{div}"/>\n')
         b.append(f'<text x="{CHART_X}" y="{Y_BASE + 16}" font-family="{SANS}" '
-                 f'font-size="9" fill="{dimmer}">{days[0][0][5:]}</text>\n')
+                 f'font-size="9" fill="{dimmer}">{recent_days[0][0][5:]}</text>\n')
         b.append(f'<text x="{W - 26}" y="{Y_BASE + 16}" text-anchor="end" '
                  f'font-family="{SANS}" font-size="9" fill="{dimmer}">今天</text>\n')
     else:
         b.append(f'<text x="{CHART_X + 40}" y="{Y_BASE - 30}" font-family="{SANS}" '
-                 f'font-size="10" fill="{dimmer}">等待数据 …</text>\n')
+                 f'font-size="10" fill="{dimmer}">近 14 天暂无数据 …</text>\n')
 
     # 底部文案行
     b.append(f'<line x1="26" y1="{Y_FOOT - 16}" x2="{W - 26}" y2="{Y_FOOT - 16}" '
@@ -145,19 +174,33 @@ def build(pal, total, uniques, days):
 
 def main():
     os.makedirs(ASSETS, exist_ok=True)
-    total, uniques, days = fetch_views()
-    demo = total is None
+    api_days = fetch_views()
+
+    # 接口失败：不动 store，不覆盖旧 SVG（除非首次跑）
+    if api_days is None:
+        for suffix in PALETTES:
+            name = f"visitors{suffix}.svg"
+            if os.path.exists(os.path.join(ASSETS, name)):
+                print(f"跳过 {name}：Traffic 数据不可用，保留现有卡片")
+        return
+
+    store = load_store()
+    store = merge(store, api_days)
+    save_store(store)
+
+    total_views = sum(v["views"] for v in store.values())
+    total_uniques = sum(v["uniques"] for v in store.values())
+    since = min(store) if store else ""
+
+    # 最近 N_BARS 天柱状图数据（按日期排序，最后一根是今天）
+    recent = [(d, store[d]["views"], store[d]["uniques"])
+              for d in sorted(store)][-N_BARS:]
+
     for suffix, pal in PALETTES.items():
         name = f"visitors{suffix}.svg"
-        path = os.path.join(ASSETS, name)
-        # Traffic API 抖动/PAT 过期时不覆盖旧 SVG，避免"访客数消失"；
-        # 只有首次运行（还没有 SVG）时才落一份"—"占位
-        if demo and os.path.exists(path):
-            print(f"跳过 {name}：Traffic 数据不可用，保留现有卡片")
-            continue
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(build(pal, total, uniques, days))
-        print(f"生成 {name}")
+        with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
+            f.write(build(pal, total_views, total_uniques, recent, since))
+        print(f"生成 {name} (累计 {total_views} 次浏览 / {total_uniques} 位独立访客)")
 
 
 if __name__ == "__main__":
